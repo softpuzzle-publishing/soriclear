@@ -49,3 +49,23 @@
         }
     }
 }
+#patient-chart-age, #patient-chart-gender{
+    height: 150px!important;
+}
+
+
+.purchase-situation{
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    .item{
+        background-color: $lightgray;
+        padding: 20px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        &:nth-child(1){
+            grid-column: 1 / span 2;
+        }
+    }
+}
