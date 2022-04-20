@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">Bubble 정산 등록</h2>
+                <div class="p-3">
+                    <div class="table-title-container">
+                        <div class="table-title"><i class="fas fa-caret-right"></i>iOS 정산자료 업로드</div>
+                    </div>
+
+                    <table class="table table-center table-fixed table-bordered">
+                        <thead>
+                            <tr>
+                                <th>지역/국가</th>
+                                <th>파일 등록</th>
+                                <th>추가 건수</th>
+                                <th>반영하기</th>
+                                <th>최종 업데이트 일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>국내</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>일본</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>중국</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal" disabled>반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>홍콩</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>미국</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>동남아시아</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>유럽</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>남아메리카</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                            <tr>
+                                <td>기타</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold">n</span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal">반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="table-title-container">
+                        <div class="table-title"><i class="fas fa-caret-right"></i>Android 정산자료 업로드</div>
+                    </div>
+
+                    <table class="table table-center table-fixed table-bordered">
+                        <thead>
+                            <tr>
+                                <th>지역/국가</th>
+                                <th>파일 등록</th>
+                                <th>추가 건수</th>
+                                <th>반영하기</th>
+                                <th>최종 업데이트 일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>전체</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">파일선택</a>
+                                </td>
+                                <td>
+                                    <span class="font-weight-bold"></span>건 추가 (중복 : <span class="text-danger">3</span> )
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-dark btn-sm" data-target="#modal-reflect" data-toggle="modal" disabled>반영하기</button>
+                                </td>
+                                <td>YYYY-MM-DD hh:mm:ss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-3">
+                    <table class="table table-center table-fixed table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="2">샘플파일 다운받기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>iOS</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">다운로드</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Android</td>
+                                <td>
+                                    <a href="javascipt:'';" class="btn btn-dark btn-sm">다운로드</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.login{
+    background: #f7f7f7 url(../images/img-logo-white.svg) repeat-y;
+    height: 100%;
+    width: 100%;
+    background-position: -521px -377px;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    .inner{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        width: 650px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 3rem 7rem;
+        border-radius: 0.75rem;
+        box-shadow: 3px 5px 15px rgba(20, 19, 19, 0.05);
+        min-height: 450px;
+    }
+}

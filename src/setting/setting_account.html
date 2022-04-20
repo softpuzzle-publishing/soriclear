@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">계정 관리</h2>
+                <h2 class="title-location">
+                    계정 관리
+                    <span class="text-gray font-size-16px font-weight-medium">관리자 계정을 생성하고 관리합니다.</span>
+                </h2>
+
+                <div class="p-3">
+                    
+                    <table class="table table-height-46px">
+                        <colgroup>
+                            <col width="14.3%">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="text-center">관리자 찾기</th>
+                                <td>
+                                    <div class="row row-10">
+                                        <div class="col-2">
+                                            <select name="" id="" class="custom-select w-100">
+                                                <option value="">이름</option>
+                                                <option value="">이메일</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-2">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="pt-4 text-center mb-2">
+                        <button class="btn btn-primary">검색 하기</button>
+                    </div>
+                </div>
+
+                <hr class="hr">
+
+                <div class="p-3">
+                    <div class="table-title-container">
+                        <div class="table-title">
+                            <i class="fas fa-caret-right"></i>
+                            계정목록
+                        </div>
+                        <div class="row row-10">
+                            <div class="col-auto">
+                                <a href="setting_account_form.html" class="btn btn-primary">신규 등록</a>
+                            </div>
+                            <div class="col-auto">
+                                <select name="" id="" class="custom-select">
+                                    <option value="">100개씩 보기</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list mx-3">
+                        <table class="table table-fixed table-center table-bordered"  id="datatable1">
+                            <thead>
+                                <th data-orderable="false">이름</th>
+                                <th data-orderable="false">이메일</th>
+                                <th data-orderable="false">권한</th>
+                                <th data-orderable="false">소속사</th>
+                                <th>최종 접속일</th>
+                                <th>등록일</th>
+                                <th data-orderable="false">등록자</th>
+                                <th data-orderable="false">잠금</th>
+                                <th data-orderable="false">삭제</th>
+                                <th data-orderable="false">로그</th>
+                            </thead>
+                            <tbody>
+                                @@ for (var i=1; i < 5; i++){
+                                <tr>
+                                    <td>
+                                        <!-- 잠금일경우 class="text-gray" 추가 -->
+                                        <a href="setting_account_form.html" >관리자이름 `+i+`</a>
+                                        <a href="setting_account_form.html" class="text-gray" >잠금관리자 `+i+`</a>
+                                    </td>
+                                    <td>admin@email.com</td>
+                                    <td>권한명`+i+`</td>
+                                    <td>jypNation</td>
+                                    <td>2018-04-0`+i+` 1`+i+`:00:00</td>
+                                    <td>2018-03-0`+i+` 1`+i+`:00:00</td>
+                                    <td>관리자1</td>
+                                    <td>
+                                        <a href="#modal-unlock" data-toggle="modal" class="text-danger cursor-pointer">[잠금해제]</a>
+                                        <a href="#modal-lock" data-toggle="modal" class="text-blue cursor-pointer">[잠금]</a>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#modal-account-delete">삭제</button>
+                                    </td>
+                                    <td>
+                                        <a href="#modal-account-log" data-toggle="modal" class="btn btn-dark btn-sm font-weight-bold">보기</a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 필요할것 같아서 넣어놨어요!!  필요 없으면 지워주세요 -->
+                    <div class="w-100 pt-5 pb-9">
+                        @@include('@@webRoot/_include/_pagination.html')
+                    </div>
+                    <!-- <div class="border-top d-flex justify-content-between">
+                        <a href="javascript:history.back();" class="btn btn-dark mt-2">뒤로</a>
+                    </div> -->
+                    <!-- 지워도 되는 영역 끝 -->
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        $(document).ready(function(){
+            var datatable = $('#datatable1').DataTable({
+                'responsive': false,
+                'searching': false,
+                'info': false,
+                'paging': false,
+                'details': false,
+                'fixedColumns': true,
+                'bAutoWidth': true, //자동너비
+                'aaSorting': [],
+                'ordering': true,
+                "order":[[4, "desc"], [5, "desc"]],//asc : 오름차순 //desc:내림차순
+                // "columnDefs": [
+                //     // {
+                //     //     "width": "10%",
+                //     //     "targets": 0
+                //     // },
+                //     // {
+                //     //     "width": "15%",
+                //     //     "targets": 1
+                //     // },
+                //     // {
+                //     //     "width": "10%",
+                //     //     "targets": 2
+                //     // },
+                //     // {
+                //     //     "width": "10%",
+                //     //     "targets": 3
+                //     // },
+                //     // {
+                //     //     "width": "15%",
+                //     //     "targets": 4
+                //     // },
+                //     // {
+                //     //     "width": "10%",
+                //     //     "targets": 5
+                //     // },
+                //     // {
+                //     //     "width": "10%",
+                //     //     "targets": 6
+                //     // },
+                //     // {
+                //     //     "width": "10%",
+                //     //     "targets": 7
+                //     // },
+                //     // {
+                //     //     "width": "5%",
+                //     //     "targets": 8
+                //     // },
+                //     // {
+                //     //     "width": "5%",
+                //     //     "targets": 9
+                //     // }
+                // ]
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

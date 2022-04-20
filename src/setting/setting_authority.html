@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">권한 관리</h2>
+
+                <div class="p-3">
+                    
+                    <table class="table table-height-46px">
+                        <colgroup>
+                            <col width="14.3%">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="text-center">메뉴검색</th>
+                                <td>
+                                    <div class="row row-10  align-items-center">
+                                        <div class="col">
+                                            <div class="row row-10 align-items-center">
+                                                <div class="col-auto">
+                                                    <select name="" id="" class="custom-select width-200px">
+                                                        <option value="">이름</option>
+                                                        <option value="">이메일</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-dark">추가</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    * 메뉴가 소속된 권한들을 검색합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-10 m-t-10 align-items-center">
+                                        <div class="col">
+                                            <div class="row row-10 align-items-center">
+                                                <div class="col-auto">
+                                                    <select name="" id="" class="custom-select width-200px">
+                                                        <option value="">이름</option>
+                                                        <option value="">이메일</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-dark">추가</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-secondary">삭제</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">권한명</th>
+                                <td>
+                                    <input type="text" class="form-control  width-200px">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="pt-4 text-center mb-2">
+                        <button class="btn btn-primary">검색 하기</button>
+                    </div>
+                </div>
+
+                <hr class="hr">
+
+                <div class="p-3">
+                    <div class="table-title-container">
+                        <div class="table-title">
+                            <i class="fas fa-caret-right"></i>
+                            권한 목록
+                        </div>
+                        <div class="row row-10">
+                            <div class="col-auto">
+                                <a href="setting_authority_form.html" class="btn btn-primary">권한 추가</a>
+                            </div>
+                            <div class="col-auto">
+                                <select name="" id="" class="custom-select">
+                                    <option value="">100개씩 보기</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <table class="table table-fixed table-center table-bordered"  id="datatable1">
+                            <thead>
+                                <th>권한명</th>
+                                <th>이름</th>
+                                <th>삭제</th>
+                            </thead>
+                            <tbody>
+                                @@ for (var i=1; i < 5; i++){
+                                <tr>
+                                    <td>
+                                        <!-- 잠금일경우 class="text-gray" 추가 -->
+                                        <a href="setting_authority_form.html" class="text-underline">권한명 `+i+`</a>
+                                    </td>
+                                    <td>
+                                        <a href="#modal-authority-list" data-toggle="modal" class="text-underline">99</a>
+                                    </td>
+                                    <td>
+                                        <a href="#modal-authority-delete" data-toggle="modal" class="btn btn-outline-secondary btn-sm">삭제</a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 필요할것 같아서 넣어놨어요!!  필요 없으면 지워주세요 -->
+                    <div class="w-100 pt-5 pb-9">
+                        @@include('@@webRoot/_include/_pagination.html')
+                    </div>
+                    <!-- <div class="border-top d-flex justify-content-between">
+                        <a href="javascript:history.back();" class="btn btn-dark mt-2">뒤로</a>
+                    </div> -->
+                    <!-- 지워도 되는 영역 끝 -->
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        $(document).ready(function(){
+        });
+
+    </script>
+
+</body>
+
+</html>

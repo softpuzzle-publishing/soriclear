@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">연동 정보 관리</h2>
+                <h2 class="title-location">연동 정보 관리 > 앱이름1 > 이용권그룹1</h2>
+
+                <div class="p-3">
+                    <div class="table-title-container">
+                        <div class="row row-10 align-items-center">
+                            <div class="col-auto">
+                                <div class="table-title">
+                                    <i class="fas fa-caret-right"></i>
+                                    이용권그룹1 상품 리스트  
+                                </div>
+                                
+                            </div>
+                            <div class="col-auto">
+                                <span>상품명을 누르면 편집 가능합니다.</span>
+                            </div>
+                        </div>
+                        <a href="#modal-system-product" data-toggle="modal" class="btn btn-primary">신규 등록</a>
+                    </div>
+
+                    <table class="table table-fixed table-center table-bordered">
+                        <thead>
+                            <th>이름</th>
+                        </thead>
+                        <tbody>
+                            @@ for (var i=1; i < 5; i++){
+                            <tr>
+                                <td>
+                                    <a href="#modal-system-product" data-toggle="modal">상품명 `+i+`</a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                    
+                    <!-- 필요할것 같아서 넣어놨어요!!  필요 없으면 지워주세요 -->
+                    <div class="w-100 pt-5 pb-9">
+                        @@include('@@webRoot/_include/_pagination.html')
+                    </div>
+                    <div class="border-top d-flex justify-content-between">
+                        <a href="javascript:history.back();" class="btn btn-dark mt-2">뒤로</a>
+                    </div>
+                    <!-- 지워도 되는 영역 끝 -->
+
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

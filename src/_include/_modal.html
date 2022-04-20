@@ -1,0 +1,273 @@
+<div>
+    <!-- modal : 로그인 > 아이디 체크-->
+    <div class="modal" tabindex="-1" id="modal-check-id" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-danger text-center">
+                    올바른 아이디 형식으로 입력해주세요
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 로그인 > 비밀번호 형식 체크-->
+    <div class="modal" tabindex="-1" id="modal-check-password-format" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-danger text-center">
+                    비밀번호가 올바르지 않습니다.<br> 다시 입력해주세요. 
+
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 로그인 > 비밀번호 체크-->
+    <div class="modal" tabindex="-1" id="modal-check-password" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-danger text-center">
+                    비밀번호를 입력해주세요
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 로그인 > 아이디/비밀번호 체크-->
+    <div class="modal" tabindex="-1" id="modal-check-login" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-danger text-center">
+                    아이디 또는 비밀번호가 일치하지 않습니다. 
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 비밀번호 찾기 -->
+    <div class="modal" tabindex="-1" id="modal-find-password" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">비밀번호 찾기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">병원</label>
+                            </div>
+                            <div class="col-9">
+                                <select name="" id="" class="custom-select w-100">
+                                    <option value="">로완병원</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">아이디</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">이름</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">전화번호</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-targe="#modal-reset-password">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal : 비밀번호 변경 -->
+    <div class="modal" tabindex="-1" id="modal-reset-password" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">비밀번호 변경</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-12">
+                                <label for="" class="col-form-label">새 비밀번호
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-12">
+                                <label for="" class="col-form-label">새 비밀번호 확인
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <!-- 유효성검사 input에  is-invalid 추가 -->
+                                <input type="password" class="form-control is-invalid">
+                                <div class="invalid-feedback ml-0">비밀번호가 일치하지 않습니다.</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-dark">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal : 관리자 신청 -->
+    <div class="modal" tabindex="-1" id="modal-apply-admin" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">관리자 신청</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">병원</label>
+                            </div>
+                            <div class="col-9">
+                                <select name="" id="" class="custom-select w-100">
+                                    <option value="">로완병원</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">등급</label>
+                            </div>
+                            <div class="col-9">
+                                <select name="" id="" class="custom-select w-100">
+                                    <option value="">일반관리자</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">아이디</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">이름</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
+                                <label for="">전화번호</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-center py-3">
+                        슈퍼관리자가 확인 후 승인 처리 됩니다.
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-dark">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 관리자 신청 완료-->
+    <div class="modal" tabindex="-1" id="modal-apply-admin-complete" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-center">
+                    관리자 신청이 완료 되었습니다.<br>
+                    슈퍼관리자가 승인 처리 후 사용 가능합니다. 
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

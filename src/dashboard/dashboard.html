@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main" class="">
+
+                <!-- 컨텐츠 시작 -->
+                <div class="row row-0 align-items-center justify-content-between border-bottom">
+                    <div class="col">
+                        <h2 class="title border-0">대쉬보드</h2>
+                    </div>
+                    <div class="col-auto">
+                        <div class="row row-10 align-items-center justify-content-end pr-3">
+                            <div class="col-auto">기간</div>
+                            <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
+                            <div class="col-auto">~</div>
+                            <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-gray active">당일</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-gray">1주일</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-gray">1개월</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-gray">3개월</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-gray">6개월</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-gray">1년</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-primary min-width-100px">검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3">
+                    <div class="row row-10">
+                        <div class="col-7">
+                            <div class="card shadow-sm">
+                                <div class="table-title">환자현황</div>
+                                <div class="d-grid patient-situation">
+                                    <div class="item justify-content-center">
+                                        <p class="text-dark align-self-center font-size-16px">총 환자수</p>
+                                        <p class="text-blue align-self-center font-weight-bold  font-size-30px pt-3">3105</p>
+                                    </div>
+                                    <div class="item">
+                                        <p class="text-secondary">신규 환자수</p>
+                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">35</p>
+                                    </div>
+                                    <div class="item">
+                                        <p class="text-secondary">과제대기 환자수</p>
+                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">305</p>
+                                    </div>
+                                    <div class="item">
+                                        <p class="text-secondary">과제진행 환자수
+                                        </p>
+                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">35</p>
+                                    </div>
+                                    <div class="item">
+                                        <p class="text-secondary">과제완료 환자수
+                                        </p>
+                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">35</p>
+                                    </div>
+                                </div>
+
+                                <div class="row row-20 p-t-15 align-items-stretch">
+                                    <div class="col-9">
+                                        <div class="patient-chart-line-area">
+                                            <canvas id="patient-chart-line"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="d-flex flex-column">
+                                            <div class="patient-chart-age-area">
+                                                <canvas id="patient-chart-age"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="card shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        $(document).ready(function () {
+            // 라인 차트 툴팁 커스텀
+            Chart.defaults.global.pointHitDetectionRadius = 1;
+            var customTooltips = function (tooltip) {
+                // Tooltip Element
+                var tooltipEl = document.getElementById('chartjs-tooltip');
+                if (!tooltipEl) {
+                    tooltipEl = document.createElement('div');
+                    tooltipEl.id = 'chartjs-tooltip';
+                    tooltipEl.innerHTML = "<table></table>"
+                    document.body.appendChild(tooltipEl);
+                }
+                // Hide if no tooltip
+                if (tooltip.opacity === 0) {
+                    tooltipEl.style.opacity = 0;
+                    return;
+                }
+                // Set caret Position
+                tooltipEl.classList.remove('above', 'below', 'no-transform');
+                if (tooltip.yAlign) {
+                    tooltipEl.classList.add(tooltip.yAlign);
+                } else {
+                    tooltipEl.classList.add('no-transform');
+                }
+
+                function getBody(bodyItem) {
+                    return bodyItem.lines;
+                }
+                // Set Text
+                if (tooltip.body) {
+                    var titleLines = tooltip.title || [];
+                    var bodyLines = tooltip.body.map(getBody);
+                    //PUT CUSTOM HTML TOOLTIP CONTENT HERE (innerHTML)
+                    var innerHtml = '<thead>';
+                    titleLines.forEach(function (title) {
+                        innerHtml += '<tr><th>' + title + '월</th></tr>';
+                    });
+                    innerHtml += '</thead><tbody>';
+                    bodyLines.forEach(function (body, i) {
+                        var colors = tooltip.labelColors[i];
+                        var style = 'background:' + colors.backgroundColor;
+                        style += '; border-color:' + colors.labelColor;
+                        style += '; border-width: 1px';
+                        innerHtml += '<tr><td class="pt-2">신규 환자 : 20<td></tr>\n<tr><td>과제 대기 환자 : 5</td></tr>\n<tr><td>과제 진행 환자 : ' + body + '</td></tr>\n<tr><td>과제 완료 환자 : 3302</td></tr>';
+                    });
+                    innerHtml += '</tbody>';
+                    var tableRoot = tooltipEl.querySelector('table');
+                    tableRoot.innerHTML = innerHtml;
+                }
+                var position = this._chart.canvas.getBoundingClientRect();
+                // Display, position, and set styles for font
+                tooltipEl.style.opacity = 1;
+                tooltipEl.style.left = position.left + tooltip.caretX + 'px';
+                tooltipEl.style.top = position.top + tooltip.caretY + 'px';
+                tooltipEl.style.fontFamily = tooltip._fontFamily;
+                tooltipEl.style.fontSize = tooltip.fontSize;
+                tooltipEl.style.fontStyle = tooltip._fontStyle;
+                tooltipEl.style.padding = tooltip.yPadding + 'px ' + tooltip.xPadding + 'px';
+            };
+            //chartjs - 환자현황 라인 차트
+            var config = {
+                type: 'line',
+                data: {
+                    labels: ["21.12", "22.1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                    datasets: [{
+                        backgroundColor: "rgba(255, 99, 132, 1)",
+                        borderColor: 'rgba(255, 99, 132, 0.5)',
+                        borderWidth: 1,
+                        pointRadius: 2,
+                        pointHoverRadius: 2,
+                        data: [10, 20, 40, 50, 60, 70, 50, 85, 90, 52, 94, 76, 90],
+                        fill: false,
+                        // lineTension: 0,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        position: 'nearest',
+                        //Set the name of the custom function here
+                        custom: customTooltips
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                //display: false,
+                            },
+                            scaleLabel: {
+                                display: false,
+                            },
+                            ticks: {
+                                fontColor: '#989da0',
+                                fontSize: 12,
+                                fontFamily: 'Noto Sans KR',
+                                padding: 10,
+                            },
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                drawBorder: false,
+                            },
+                            ticks: {
+                                fontColor: '#989da0',
+                                fontSize: 12,
+                                fontFamily: 'Noto Sans KR',
+                                stepSize: 10,
+                                beginAtZero: true,
+                                padding: 10,
+                            },
+                        }]
+                    }
+                }
+            };
+            window.onload = function () {
+                var ctx = document.getElementById('patient-chart-line').getContext('2d');
+                window.myLine = new Chart(ctx, config);
+            };
+
+
+            //chartjs - 환자 연령별 비율
+        })
+    </script>
+
+</body>
+
+</html>

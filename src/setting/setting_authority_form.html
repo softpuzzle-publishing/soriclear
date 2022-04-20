@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">권한 관리</h2>
+                <h2 class="title-location">
+                    권한 관리 > 권한 추가/수정
+                </h2>
+
+                <div class="p-3">
+
+                    <table class="table table-fixed table-center table-bordered">
+                        <colgroup>
+                            <col width="14.3%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>*권한명</th>
+                                <td><input type="text" class="form-control width-600px"></td>
+                            </tr>
+                            <tr>
+                                <th>설명</th>
+                                <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <th>*권한메뉴</th>
+                                <td class="text-left">
+                                    <div class="w-100 border p-3" style="min-height:200px; max-height:500px; overflow-x: hidden; overflow-y:auto">
+                                        <ul class="authority-list">
+                                            <li class="authority-depth1">
+                                                <div>
+                                                    <input type="checkbox" name="AuthorUse" id="checkbox0">
+                                                    <label for="checkbox0">어드민 관리</label>
+                                                </div>
+                                                <div class="authority-depth2  row row-0 align-items-center">
+                                                    <div class="col-2">
+                                                        <input type="checkbox" name="AuthorUse" id="checkbox1">
+                                                        <label for="checkbox1">어드민 계정 관리</label>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="row row-20">
+                                                            <div class="col-auto">
+                                                                <input type="checkbox" name="AuthorUse" id="checkbox2">
+                                                                <label for="checkbox2">오픈</label>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <input type="checkbox" name="AuthorUse" id="checkbox3">
+                                                                <label for="checkbox3">추가 / 수정</label>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <input type="checkbox" name="AuthorUse" id="checkbox4">
+                                                                <label for="checkbox4">삭제</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="authority-depth2  row row-0 align-items-center">
+                                                    <div class="col-2">
+                                                        <input type="checkbox" name="AuthorUse" id="checkbox1">
+                                                        <label for="checkbox1">권한 관리</label>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="row row-20">
+                                                            <div class="col-auto">
+                                                                <input type="checkbox" name="AuthorUse" id="checkbox2">
+                                                                <label for="checkbox2">오픈</label>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <input type="checkbox" name="AuthorUse" id="checkbox3">
+                                                                <label for="checkbox3">추가 / 수정</label>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <input type="checkbox" name="AuthorUse" id="checkbox4">
+                                                                <label for="checkbox4">삭제</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>부여 가능한 권한 목록</th>
+                                <td>
+                                    <div class="row row-10 align-items-start">
+                                        <div class="col">
+                                            <div class="border p-3 text-left d-inline-flex flex-wrap w-100" style="max-height:200px; overflow-y:auto;">
+                                                @@for(var i = 0; i < 50; i++){
+                                                <div class="available-list p-1 m-r-10 border-bottom">
+                                                    <span>
+                                                        권한명 a
+                                                    </span>
+                                                    <a href="javscript:;" class="ml-2 bg-lightgray rounded-lg px-1">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                </div>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modal-authority-find">찾기</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between">
+                        <a href="javascript:history.back();" class="btn btn-dark mt-2">뒤로</a>
+                        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-authority-save">등록</button>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        // $("#modal-authority-find").modal("show");
+    </script>
+
+</body>
+
+</html>
