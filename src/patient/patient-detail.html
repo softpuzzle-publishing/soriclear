@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">환자관리</h2>
+                <h2 class="title-location">상세보기</h2>
+                <div class="p-3">
+                    <div class="table-title">개인 정보</div>
+                    <table class="table table-fixed table-height-46px">
+                        <colgroup>
+                            <col style="width: 13%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>병원 명</th>
+                                <td>로완 병원</td>
+                            </tr>
+                            <tr>
+                                <th>아이디 *</th>
+                                <td>Rowna00</td>
+                            </tr>
+                            <tr>
+                                <th>비밀번호 *</th>
+                                <td>
+                                    <input type="password" name="" id="" class="form-control width-200px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        $(document).ready(function(){
+            var datatable = $('#table-patient-list').DataTable({
+                'responsive': false,
+                'searching': false,
+                'info': false,
+                'paging': false,
+                'details': false,
+                'fixedColumns': false,
+                'bAutoWidth': true, //자동너비
+                'aaSorting': [],
+                'ordering': true,
+                "order":[[1, "desc"], [7, "desc"], [8, "desc"]],//asc : 오름차순 //desc:내림차순
+                // "columnDefs": [
+                //     {
+                //         "width": "4%",
+                //         "targets": 0
+                //     },
+                //     {
+                //         "width": "5%",
+                //         "targets": 1
+                //     },
+                //     {
+                //         "width": "8%",
+                //         "targets": 2
+                //     },
+                //     {
+                //         "width": "8%",
+                //         "targets": 3
+                //     },
+                //     {
+                //         "width": "5%",
+                //         "targets": 4
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 5
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 6
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 7
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 8
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 9
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 10
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 11
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 12
+                //     }
+                // ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>

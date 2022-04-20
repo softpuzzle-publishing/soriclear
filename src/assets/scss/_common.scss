@@ -33,9 +33,29 @@ textarea{resize: none!important;}
     td{
         [type=checkbox]{margin-top: -2px;}
     }
+<<<<<<< HEAD
     th{
         &.sort{cursor: pointer;}
         .fa, .far, .fas{vertical-align: middle;margin-left: .25rem;font-size: 14px;}
+=======
+    > tfoot > tr > td{background: #f3f3f3;border-top: 2px solid $table-border-color;}
+
+    th.daily{
+        min-width: 60px;
+    }
+    tr:hover{
+        background:$lightgray;
+    }
+}
+.table-dark{
+    thead{
+        th{background:$dark;}
+    }
+}
+.table-height-46px{
+    tr{
+        height:46px;
+>>>>>>> jang
     }
 }
 
@@ -54,6 +74,7 @@ textarea{resize: none!important;}
         margin-right: 10px;
     }
 }
+
 
 input[type=file].form-control{
     padding-top: 3px;
