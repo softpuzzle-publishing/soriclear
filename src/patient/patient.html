@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">환자관리</h2>
+                <div class="p-3">
+                    <div class="row row-0 m-t-20 algin-itmes-center justify-content-between">
+                        <div class="col-auto">
+                            총 100개 /  선택3개 
+                        </div>
+                        <div class="col-auto">
+                            <div class="row row-10">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">선택삭제</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark"> + 등록</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-3 m-t-20">
+                        <table class="table table-center table-bordered" id="table-patient-list">
+                            <thead>
+                                <tr class="">
+                                    <th data-orderable="false">
+                                        <input type="checkbox" name="" id="">
+                                    </th>
+                                    <th>NO</th>
+                                    <th data-orderable="false">아이디</th>
+                                    <th data-orderable="false">이름</th>
+                                    <th data-orderable="false">성별</th>
+                                    <th data-orderable="false">생년월일</th>
+                                    <th data-orderable="false">연락처</th>
+                                    <th>최근 접속일 </th>
+                                    <th>가입일</th>
+                                    <th data-orderable="false">과금상태</th>
+                                    <th data-orderable="false">회원상태</th>
+                                    <th data-orderable="false">담당병원</th>
+                                    <th data-orderable="false">강의관리</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for(var i = 0; i < 10 ; i++){
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>`+i+`</td>
+                                    <td>Abc2***</td>
+                                    <td><a href="patient-detail.html">홍길동</a></td>
+                                    <td>남</td>
+                                    <td>1960-01-01</td>
+                                    <td>01021541215</td>
+                                    <td>2022.12.0`+i+` 15:32</td>
+                                    <td>2022.12.03 15:`+i+`2</td>
+                                    <td>유료회원(종료</td>
+                                    <td>회원</td>
+                                    <td>로완병원</td>
+                                    <td>
+                                        <a href="" class="btn btn-outline-dark btn-sm">강의관리 보러가기</a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        $(document).ready(function(){
+            var datatable = $('#table-patient-list').DataTable({
+                'responsive': false,
+                'searching': false,
+                'info': false,
+                'paging': false,
+                'details': false,
+                'fixedColumns': false,
+                'bAutoWidth': true, //자동너비
+                'aaSorting': [],
+                'ordering': true,
+                "order":[[1, "desc"], [7, "desc"], [8, "desc"]],//asc : 오름차순 //desc:내림차순
+                // "columnDefs": [
+                //     {
+                //         "width": "4%",
+                //         "targets": 0
+                //     },
+                //     {
+                //         "width": "5%",
+                //         "targets": 1
+                //     },
+                //     {
+                //         "width": "8%",
+                //         "targets": 2
+                //     },
+                //     {
+                //         "width": "8%",
+                //         "targets": 3
+                //     },
+                //     {
+                //         "width": "5%",
+                //         "targets": 4
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 5
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 6
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 7
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 8
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 9
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 10
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 11
+                //     },
+                //     {
+                //         "width": "10%",
+                //         "targets": 12
+                //     }
+                // ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>
