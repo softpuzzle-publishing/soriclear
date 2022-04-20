@@ -79,7 +79,7 @@ aside{
         }
         > li.active{
             a{
-                font-weight: 700;background: #deebf6;
+                background: #deebf6;
             }
         }
     }
@@ -94,7 +94,7 @@ aside{
     margin-left: 200px;transition: .5s;
     min-height: calc(100vh - 65px);
     margin-top:64px;
-    padding-bottom:40px;
+    padding: 1.5rem 1.5rem 40px;
 }
 
 html.is-collapsed{

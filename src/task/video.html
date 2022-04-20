@@ -19,8 +19,131 @@
 
                 <!-- 컨텐츠 시작 -->
                 <h2 class="title">동영상 강의 관리</h2>
-                <div class="p-3">
-
+                <div class="search-condition">
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex align-items-center">
+                                <label for="">병원</label>
+                                <select name="" id="" class="custom-select d-inline-block w-auto">
+                                    <option value="">전체</option>
+                                </select>
+                                <label for="">학습상태</label>
+                                <select name="" id="" class="custom-select d-inline-block w-auto">
+                                    <option value="">전체</option>
+                                </select>
+                                <label for="">환자명</label>
+                                <input type="text" class="form-control d-inline-block w-auto" placeholder="입력하세요.">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark min-width-90px">검색</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between align-items-center mb-2">
+                    <div class="col-auto">
+                        <div><span>총 100개</span> / <span>선택 3개</span></div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="d-flex">
+                            <button type="button" class="btn btn-secondary ml-2" disabled>소리선택 설정</button>
+                            <button type="button" class="btn btn-secondary ml-2" disabled>소리선택 해제</button>
+                            <button type="button" class="btn btn-primary ml-2" disabled>과제부여</button>
+                            <button type="button" class="btn btn-danger ml-2" disabled>과제삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between align-items-center mb-2">
+                    <div class="col-auto">
+                        <div><span>총 100개</span> / <span>선택 3개</span></div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="d-flex">
+                            <button type="button" class="btn btn-secondary ml-2">소리선택 설정</button>
+                            <button type="button" class="btn btn-secondary ml-2">소리선택 해제</button>
+                            <button type="button" class="btn btn-primary ml-2">과제부여</button>
+                            <button type="button" class="btn btn-danger ml-2">과제삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-center table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th rowspan="2"><input type="checkbox"></th>
+                            <th rowspan="2">NO</th>
+                            <th rowspan="2">병원명</th>
+                            <th rowspan="2" class="sort">환자명 <i class="fas fa-caret-down"></i></th>
+                            <th rowspan="2">성별</th>
+                            <th rowspan="2">생년월일</th>
+                            <th colspan="3">과제 학습 현황</th>
+                            <th rowspan="2">최근 학습일</th>
+                            <th rowspan="2">소리치료<br>(notch filter)</th>
+                            <th rowspan="2">과제부여/현황/수정</th>
+                            <th rowspan="2">삭제</th>
+                        </tr>
+                        <tr>
+                            <th class="sort">과제 시작일 <i class="fas fa-caret-down"></i></th>
+                            <th class="sort">과제 종료일 <i class="fas fa-caret-down"></i></th>
+                            <th>학습상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @@for(var i = 100; i > 90; i--){
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>100</td>
+                            <td>로완병원</td>
+                            <td>홍길동</td>
+                            <td>남</td>
+                            <td>0000.00.00</td>
+                            <td>0000.00.00</td>
+                            <td>0000.00.00</td>
+                            <td>완료</td>
+                            <td>0000.00.00</td>
+                            <td>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch`+i+`">
+                                    <label class="custom-control-label" for="customSwitch`+i+`"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-dark btn-sm">과제수정</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-dark btn-sm">삭제</button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <script>
+                    $(document).on('change', '[id^="customSwitch"]', function (e) {
+                        if($(this).prop('checked')){
+                            if(!confirm('소리치료를 ON 하시겠습니까?')){
+                                e.preventDefault();
+                                $(this).prop('checked', false);
+                            }
+                        }else{
+                            if (!confirm('소리치료를 OFF 하시겠습니까?')) {
+                                e.preventDefault();
+                                $(this).prop('checked', true);
+                            }
+                        }
+                    })
+                </script>
+                <div class="row mt-3">
+                    <div class="col-2">
+                        <div class="d-flex align-items-center">
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">10</option>
+                            </select>
+                            줄/페이지
+                        </div>
+                    </div>
+                    <div class="col">
+                        @@include('@@webRoot/_include/_pagination.html')
+                    </div>
+                    <div class="col-2"></div>
                 </div>
                 <!-- 컨텐츠 끝 -->
 

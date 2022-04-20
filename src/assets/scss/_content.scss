@@ -69,3 +69,13 @@
         }
     }
 }
+
+.search-condition{
+    background: #f0f0f0;border: 1px solid #ddd;padding: 1rem;margin-bottom: 1.5rem;
+    .btn-dark{min-width: 90px;}
+    .d-flex{
+        > label{margin-right: 15px;font-weight: 500;}
+        > .form-control,
+        > .custom-select{margin-right: 30px;}
+    }
+}
