@@ -57,31 +57,31 @@
                     <div class="row row-20 align-items-stretch">
                         <div class="col-7">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
+                                <div class="d-flex justify-content-between">
                                     <div class="table-title">환자현황</div>
                                 </div>
                                 <div class="d-grid patient-situation">
                                     <div class="item justify-content-center">
-                                        <p class="text-dark align-self-center font-size-16px">총 환자수</p>
-                                        <p class="text-blue align-self-center font-weight-bold  font-size-30px pt-3">3105</p>
+                                        <p class="align-self-center font-size-16px">총 환자수</p>
+                                        <strong class="text-blue align-self-center font-size-30px pt-3">3105</strong>
                                     </div>
                                     <div class="item">
                                         <p class="text-secondary">신규 환자수</p>
-                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">35</p>
+                                        <strong class="text-blue align-self-end font-size-18px">35</strong>
                                     </div>
                                     <div class="item">
                                         <p class="text-secondary">과제대기 환자수</p>
-                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">305</p>
+                                        <strong class="text-blue align-self-end font-size-18px">305</strong>
                                     </div>
                                     <div class="item">
                                         <p class="text-secondary">과제진행 환자수
                                         </p>
-                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">35</p>
+                                        <strong class="text-blue align-self-end font-size-18px">35</strong>
                                     </div>
                                     <div class="item">
                                         <p class="text-secondary">과제완료 환자수
                                         </p>
-                                        <p class="text-blue align-self-end font-weight-bold  font-size-18px">35</p>
+                                        <strong class="text-blue align-self-end font-size-18px">35</strong>
                                     </div>
                                 </div>
 
@@ -106,23 +106,23 @@
                         </div>
                         <div class="col-5">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
+                                <div class="d-flex justify-content-between">
                                     <div class="table-title">매출현황</div>
                                 </div>
-                                <div class="row row-20 align-items-center">
+                                <div class="row row-20">
                                     <div class="col-7">
                                         <div class="d-grid purchase-situation">
                                             <div class="item ">
-                                                <p class="text-dark font-size-16px">총 매출</p>
-                                                <p class="text-blue align-self-end font-weight-bold  font-size-30px">40.000,000원 </p>
+                                                <p class="font-size-16px">총 매출</p>
+                                                <strong class="text-blue align-self-end font-size-26px">40.000,000원 </strong>
                                             </div>
                                             <div class="item">
                                                 <p class="text-secondary">총 콘텐츠 구매수</p>
-                                                <p class="text-blue align-self-end font-weight-bold  font-size-18px">3105</p>
+                                                <strongp class="text-blue align-self-end font-size-18px">3105</strongp>
                                             </div>
                                             <div class="item">
                                                 <p class="text-secondary">총 구매자 수</p>
-                                                <p class="text-blue align-self-end font-weight-bold  font-size-18px">999</p>
+                                                <strong class="text-blue align-self-end font-size-18px">999</strong>
                                             </div>
                                         </div>
                                     </div>
@@ -133,17 +133,15 @@
                                     </div>
                                 </div>
 
-                                <div class="table-title-container">
+                                <div class="d-flex justify-content-between mt-4">
                                     <div class="table-title">콘텐츠 구매 리스트</div>
                                 </div>
-
-                                <!-- 콘텐츠 구매리스트 > 파트너 일때 노출 -->
-                                <table class="table table-center table-fixed table-bordered">
+                                <table class="table table-bordered table-center">
                                     <colgroup>
-                                        <col style="width: 8%;">
+                                        <col style="width: 60px;">
                                         <col>
-                                        <col style="width: 40%;">
-                                        <col style="width: 15%;">
+                                        <col>
+                                        <col>
                                         <col>
                                     </colgroup>
                                     <thead>
@@ -152,55 +150,23 @@
                                             <th>카테고리</th>
                                             <th>콘텐츠명</th>
                                             <th>판매수</th>
-                                            <th>수익</th>
+                                            <th class="sort">
+                                                수익 <i class="fas fa-caret-down"></i>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @@for(var i = 1; i < 6; i++){ <tr>
+                                        @@for(var i = 1; i < 6; i++){
+                                        <tr>
                                             <td>`+ i +`</td>
                                             <td>소리치료</td>
                                             <td class="text-left">만성이명 저리가라 운동하기 .MP3</td>
                                             <td>1000</td>
-                                            <td>40,000,000원</td>
-                                            </tr>
-                                            }
+                                            <td>40,000,00`+ i+`원</td>
+                                        </tr>
+                                        }
                                     </tbody>
                                 </table>
-                                <!-- 콘텐츠 구매리스트 > 파트너 일때 노출 끝 -->
-
-                                <!-- 콘텐츠 구매리스트 > 슈퍼관리자 일때 노출 -->
-                                <div class="px-3">
-                                    <table class="table table-center table-fixed table-bordered" id="table-purchase-list">
-                                        <colgroup>
-                                            <col style="width: 8%;">
-                                            <col>
-                                            <col style="width: 40%;">
-                                            <col style="width: 15%;">
-                                            <col>
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th data-orderable="false">NO</th>
-                                                <th data-orderable="false">카테고리</th>
-                                                <th data-orderable="false">콘텐츠명</th>
-                                                <th data-orderable="false">판매수</th>
-                                                <th>수익</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for(var i = 1; i < 6; i++){ 
-                                            <tr>
-                                                <td>`+ i +`</td>
-                                                <td>소리치료</td>
-                                                <td class="text-left">만성이명 저리가라 운동하기 .MP3</td>
-                                                <td>1000</td>
-                                                <td>40,000,00`+ i+`원</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- 콘텐츠 구매리스트 > 슈퍼관리자 일때 노출 끝 -->
                             </div>
                         </div>
                     </div>
@@ -208,14 +174,14 @@
                     <div class="row row-20 align-items-stretch m-t-20">
                         <div class="col-6 ">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
+                                <div class="d-flex justify-content-between">
                                     <div class="table-title">공지사항</div>
-                                    <a href="">
+                                    <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
 
-                                <table class="table table-fixed text-center">
+                                <table class="table table-fixed table-center">
                                     <colgroup>
                                         <col>
                                         <col style="width: 20%;">
@@ -244,19 +210,18 @@
 
                         <div class="col-6">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
-                                    <div class="table-title">우리병원 소리치료 음원 TOP 5
-                                    </div>
-                                    <a href="">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">우리병원 소리치료 음원 TOP 5</div>
+                                    <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
 
-                                <table class="table table-fixed text-center">
+                                <table class="table table-fixed table-center">
                                     <colgroup>
-                                        <col style="width:8%">
+                                        <col style="width: 60px">
                                         <col>
-                                        <col style="width: 20%;">
+                                        <col style="width: 130px">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -266,7 +231,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @@for(var i = 1; i < 6; i++){ 
+                                        @@for(var i = 1; i < 6; i++){
                                         <tr>
                                             <td>`+i+`</td>
                                             <td class="text-left">
@@ -289,60 +254,61 @@
                     <div class="row row-20 align-items-stretch m-t-20">
                         <div class="col-7">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
-                                    <div class="table-title">병원별 매출액
-                                    </div>
-                                    <a href="">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">병원별 매출액</div>
+                                    <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
 
-                                <div class="px-3">
-                                    <table class="table table-fixed text-center table-bordered" id="table-hospital-sales">
-                                        <thead>
-                                            <tr>
-                                                <th data-orderable="false">No</th>
-                                                <th data-orderable="false">병원명</th>
-                                                <th>판매수</th>
-                                                <th>수익</th>
-                                                <th data-orderable="false">매출율</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for(var i = 0; i < 5; i++){
-                                            <tr>
-                                                <td>`+ i +`</td>
-                                                <td>OO병원</td>
-                                                <td>2,00`+ i +`</td>
-                                                <td>40,000,00`+ i +`</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center ">
-                                                        <div class="progress">
-                                                            <progress max="100" value="`+ i +`5"></progress>
-                                                        </div>
+                                <table class="table table-bordered table-center">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>병원명</th>
+                                            <th class="sort">
+                                                판매수 <i class="fas fa-caret-down"></i>
+                                            </th>
+                                            <th class="sort">
+                                                수익 <i class="fas fa-caret-down"></i>
+                                            </th>
+                                            <th>매출율</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for(var i = 0; i < 5; i++){
+                                        <tr>
+                                            <td>`+ i +`</td>
+                                            <td>OO병원</td>
+                                            <td>2,00`+ i +`</td>
+                                            <td>40,000,00`+ i +`</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="progress">
+                                                        <progress max="100" value="`+ i +`5"></progress>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
                         <div class="col-5">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
+                                <div class="d-flex justify-content-between">
                                     <div class="table-title">공지사항</div>
-                                    <a href="">
+                                    <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
 
-                                <table class="table table-fixed text-center">
+                                <table class="table table-fixed table-center">
                                     <colgroup>
                                         <col>
-                                        <col style="width: 20%;">
+                                        <col style="width: 130px">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -368,22 +334,13 @@
 
                         <div class="col-7 m-t-20">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
+                                <div class="d-flex justify-content-between">
                                     <div class="table-title">운영자 승인 대기자 명단</div>
-                                    <a href="">
+                                    <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-                                <table class="table table-fixed text-center">
-                                    <colgroup>
-                                        <col style="width: 8%;">
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col style="width: 20%;">
-                                    </colgroup>
+                                <table class="table table-center">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -414,19 +371,18 @@
 
                         <div class="col-5 m-t-20">
                             <div class="card shadow-sm h-100">
-                                <div class="table-title-container">
-                                    <div class="table-title">우리병원 소리치료 음원 TOP 5
-                                    </div>
-                                    <a href="">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">우리병원 소리치료 음원 TOP 5</div>
+                                    <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
 
                                 <table class="table table-fixed text-center">
                                     <colgroup>
-                                        <col style="width:8%">
+                                        <col style="width: 60px">
                                         <col>
-                                        <col style="width: 20%;">
+                                        <col style="width: 130px">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -436,7 +392,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @@for(var i = 1; i < 6; i++){ 
+                                        @@for(var i = 1; i < 6; i++){
                                         <tr>
                                             <td>`+i+`</td>
                                             <td class="text-left">
@@ -713,78 +669,6 @@
 
                 }
             };
-
-            // 슈퍼관리자 >> 병원별 매출액 정렬기능
-            var datatable = $('#table-hospital-sales').DataTable({
-                'responsive': false,
-                'searching': false,
-                'info': false,
-                'paging': false,
-                'details': false,
-                'fixedColumns': true,
-                'bAutoWidth': false, //자동너비
-                'aaSorting': [],
-                'ordering': true,
-                "order":[[2, "desc"], [3, "desc"]],//asc : 오름차순 //desc:내림차순
-                "columnDefs": [
-                    {
-                        "width": "8%",
-                        "targets": 0
-                    },
-                    {
-                        "width": "40%",
-                        "targets": 1
-                    },
-                    {
-                        "width": "15%",
-                        "targets": 2
-                    },
-                    {
-                        "width": "15%",
-                        "targets": 3
-                    },
-                    {
-                        "width": "22%",
-                        "targets": 4
-                    }
-                ]
-            });
-
-             // 슈퍼관리자 >> 콘텐츠 구매리스트 
-             var datatable = $('#table-purchase-list').DataTable({
-                'responsive': false,
-                'searching': false,
-                'info': false,
-                'paging': false,
-                'details': false,
-                'fixedColumns': true,
-                'bAutoWidth': false, //자동너비
-                'aaSorting': [],
-                'ordering': true,
-                "order":[[4, "desc"]],//asc : 오름차순 //desc:내림차순
-                "columnDefs": [
-                    {
-                        "width": "8%",
-                        "targets": 0
-                    },
-                    {
-                        "width": "17%",
-                        "targets": 1
-                    },
-                    {
-                        "width": "40%",
-                        "targets": 2
-                    },
-                    {
-                        "width": "15%",
-                        "targets": 3
-                    },
-                    {
-                        "width": "20%",
-                        "targets": 4
-                    }
-                ]
-            });
         })
     </script>
 

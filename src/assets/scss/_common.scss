@@ -4,6 +4,8 @@
 .font-size-14px{font-size: 14px !important;}
 .font-size-16px{font-size: 16px !important;}
 .font-size-18px{font-size: 18px !important;}
+.font-size-26px{font-size: 26px !important;}
+.font-size-28px{font-size: 28px !important;}
 .font-size-30px{font-size: 30px !important;}
 
 .min-width-90px{min-width: 90px;}
@@ -19,7 +21,7 @@ hr{margin: 0;border-width: 5px;border-color: #eee;}
     &.vertical{border-top: 0;border-bottom: 0;border-left: 1px solid #e5e5e5;border-right: 1px solid #e5e5e5;width: 8px;height: auto;}
 }
 
-button{border-radius: 0;border: 0;padding: 0;margin: 0;background: transparent;}
+button{border-radius: 0;border: 0;padding: 0;margin: 0;background: transparent;line-height: 1;}
 
 textarea{resize: none!important;}
 
@@ -34,8 +36,16 @@ textarea{resize: none!important;}
         [type=checkbox]{margin-top: -2px;}
     }
     th{
-        &.sort{cursor: pointer;}
-        .fa, .far, .fas{vertical-align: middle;margin-left: .25rem;font-size: 14px;}
+        &.sort{
+            cursor: pointer;
+            &.active{
+                .fa, .far, .fas{transform: rotate(180deg);}
+            }
+            .fa, .far, .fas{vertical-align: middle;margin-left: .25rem;font-size: 14px;margin-top: -2px;}
+        }
+    }
+    .tr-selected{background: #fff8e3;
+        &:hover{background: #f9eecd;}
     }
 }
 
