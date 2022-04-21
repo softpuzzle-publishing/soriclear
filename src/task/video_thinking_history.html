@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">동영상 강의 관리</h2>
+                <h2 class="title-location">동영상 강의 관리 &gt; 홍길동님 학습현황</h2>
+                <table class="table table-bordered table-center">
+                    <thead>
+                        <tr>
+                            <th>환자명</th>
+                            <th>생년월일</th>
+                            <th>성별</th>
+                            <th>과제 시작일</th>
+                            <th>과제 종료일</th>
+                            <th>진행 상태</th>
+                            <th>진행률</th>
+                            <th class="bg-cell-blue">사전평가</th>
+                            <th class="bg-cell-blue">중간평가1</th>
+                            <th class="bg-cell-blue">중간평가2</th>
+                            <th class="bg-cell-blue">최종평가</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>홍길동</td>
+                            <td>1960-01-01</td>
+                            <td>여</td>
+                            <td>2022.01.01</td>
+                            <td>2022.02.01</td>
+                            <td>진행중(12차)</td>
+                            <td>70%</td>
+                            <td>85점(심고도이명)</td>
+                            <td>85점(심고도이명)</td>
+                            <td>50점(고도이명)</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="tab-custom mt-4 mb-3">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="video_mylecture.html" role="tab">나의 강의</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="video_statistics.html" role="tab">통계</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" href="video_thinking_history.html" role="tab">생각기록</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="video_checkpoint.html" role="tab">체크포인트/소감</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <table class="table table-bordered table-center table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="sort">작성일 <i class="fas fa-caret-down"></i></th>
+                            <th>키워드</th>
+                            <th>생각기록 내용</th>
+                            <th>전문가 답변</th>
+                            <th>답변작성</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @@for(var i = 1; i < 5; i++){
+                        <tr>
+                            <td>2022.12.31 15:25</td>
+                            <td>청력 , 불안, 우울</td>
+                            <td data-toggle="tooltip" data-placement="bottom" title="오늘 밥짓는 소리에 부엌에 갔더니 밥이 없었다ㅠㅠ오늘 밥짓는 소리에 부엌에 갔더니 밥이 없었다ㅠㅠ">
+                                오늘 밥짓는 소리에 부엌에 갔더니 밥이 없었다...
+                            </td>
+                            <td class="text-danger">미완료</td>
+                            <td>
+                                <button type="button" class="btn btn-dark btn-sm">답변작성</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2022.12.31 15:25</td>
+                            <td>청력 , 불안, 우울</td>
+                            <td data-toggle="tooltip" data-placement="bottom" title="자려고 누웠더니 삐 소리에 잠을 못 자서자려고 누웠더니 삐 소리에 잠을 못 자서자려고 누웠더니 삐 소리에 잠을 못 자서자려고 누웠더니 삐 소리에 잠을 못 자서자려고 누웠더니 삐 소리에 잠을 못 자서자려고 누웠더니 삐 소리에 잠을 못 자서">
+                                자려고 누웠더니 삐 소리에 잠을 못 자서...
+                            </td>
+                            <td>완료</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-dark btn-sm">답변수정</button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

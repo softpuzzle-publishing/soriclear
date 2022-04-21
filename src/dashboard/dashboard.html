@@ -18,33 +18,25 @@
             <main id="content" role="main" class="">
 
                 <!-- 컨텐츠 시작 -->
-                <div class="row row-0 align-items-center justify-content-between border-bottom">
+                <div class="row row-0 align-items-center justify-content-between mb-3">
                     <div class="col">
-                        <h2 class="title border-0">대시보드</h2>
+                        <h2 class="title mb-0">대시보드</h2>
                     </div>
                     <div class="col-auto">
-                        <div class="row row-10 align-items-center justify-content-end pr-3">
+                        <div class="row row-10 align-items-center justify-content-end">
                             <div class="col-auto">기간</div>
                             <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
                             <div class="col-auto">~</div>
                             <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
                             <div class="col-auto">
-                                <button type="button" class="btn btn-outline-gray active">당일</button>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-gray">1주일</button>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-gray">1개월</button>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-gray">3개월</button>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-gray">6개월</button>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-gray">1년</button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-gray active">당일</button>
+                                    <button type="button" class="btn btn-outline-gray">1주일</button>
+                                    <button type="button" class="btn btn-outline-gray">1개월</button>
+                                    <button type="button" class="btn btn-outline-gray">3개월</button>
+                                    <button type="button" class="btn btn-outline-gray">6개월</button>
+                                    <button type="button" class="btn btn-outline-gray">1년</button>
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <button type="button" class="btn btn-primary min-width-100px">검색</button>
@@ -53,10 +45,10 @@
                     </div>
                 </div>
 
-                <div class="p-3">
-                    <div class="row row-20 align-items-stretch">
-                        <div class="col-7">
-                            <div class="card shadow-sm h-100">
+                <div class="row row-20 align-items-stretch">
+                    <div class="col-7">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">환자현황</div>
                                 </div>
@@ -84,7 +76,6 @@
                                         <strong class="text-blue align-self-end font-size-18px">35</strong>
                                     </div>
                                 </div>
-
                                 <div class="row row-20 p-t-15 align-items-center">
                                     <div class="col-8">
                                         <div class="patient-chart-line-area">
@@ -104,8 +95,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5">
-                            <div class="card shadow-sm h-100">
+                    </div>
+                    <div class="col-5">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">매출현황</div>
                                 </div>
@@ -118,7 +111,7 @@
                                             </div>
                                             <div class="item">
                                                 <p class="text-secondary">총 콘텐츠 구매수</p>
-                                                <strongp class="text-blue align-self-end font-size-18px">3105</strongp>
+                                                <strong class="text-blue align-self-end font-size-18px">3105</strong>
                                             </div>
                                             <div class="item">
                                                 <p class="text-secondary">총 구매자 수</p>
@@ -132,7 +125,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="d-flex justify-content-between mt-4">
                                     <div class="table-title">콘텐츠 구매 리스트</div>
                                 </div>
@@ -170,17 +162,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 파트너 일때 노출 -->
-                    <div class="row row-20 align-items-stretch m-t-20">
-                        <div class="col-6 ">
-                            <div class="card shadow-sm h-100">
+                </div>
+                <!-- 파트너 일때 노출 -->
+                <div class="row row-20 align-items-stretch m-t-20">
+                    <div class="col-6 ">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">공지사항</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-
                                 <table class="table table-fixed table-center">
                                     <colgroup>
                                         <col>
@@ -207,16 +200,17 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-6">
-                            <div class="card shadow-sm h-100">
+                    <div class="col-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">우리병원 소리치료 음원 TOP 5</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-
                                 <table class="table table-fixed table-center">
                                     <colgroup>
                                         <col style="width: 60px">
@@ -248,19 +242,20 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 파트너 일때 노출 끝 -->
+                </div>
+                <!-- 파트너 일때 노출 끝 -->
 
-                    <!-- 슈퍼관리자 일때 노출 -->
-                    <div class="row row-20 align-items-stretch m-t-20">
-                        <div class="col-7">
-                            <div class="card shadow-sm h-100">
+                <!-- 슈퍼관리자 일때 노출 -->
+                <div class="row row-20 align-items-stretch m-t-20">
+                    <div class="col-7">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">병원별 매출액</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-
                                 <table class="table table-bordered table-center">
                                     <thead>
                                         <tr>
@@ -295,16 +290,17 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-5">
-                            <div class="card shadow-sm h-100">
+                    <div class="col-5">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">공지사항</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-
                                 <table class="table table-fixed table-center">
                                     <colgroup>
                                         <col>
@@ -331,9 +327,11 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-7 m-t-20">
-                            <div class="card shadow-sm h-100">
+                    <div class="col-7 m-t-20">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">운영자 승인 대기자 명단</div>
                                     <a href="#none">
@@ -368,16 +366,17 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-5 m-t-20">
-                            <div class="card shadow-sm h-100">
+                    <div class="col-5 m-t-20">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="table-title">우리병원 소리치료 음원 TOP 5</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-
                                 <table class="table table-fixed text-center">
                                     <colgroup>
                                         <col style="width: 60px">
@@ -408,8 +407,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 슈퍼관리자 일때 노출 끝 -->
                 </div>
+                <!-- 슈퍼관리자 일때 노출 끝 -->
 
                 <!-- 컨텐츠 끝 -->
 
@@ -466,7 +465,7 @@
                         var style = 'background:' + colors.backgroundColor;
                         style += '; border-color:' + colors.labelColor;
                         style += '; border-width: 1px';
-                        innerHtml += '<tr><td class="text-danger pt-2 font-weight-bold">총환자 수 : 3212</td></tr>\n<tr><td class="pt-1">신규 환자 : 20<td></tr>\n<tr><td>과제 대기 환자 : 5</td></tr>\n<tr><td>과제 진행 환자 : ' + body + '</td></tr>\n<tr><td>과제 완료 환자 : 3302</td></tr>';
+                        innerHtml += '<tr><td class="text-danger pt-2 font-weight-bold">총환자 수 : 3212</td></tr>\n<tr><td class="pt-1">- 신규 환자 : 20<td></tr>\n<tr><td>- 과제 대기 환자 : 5</td></tr>\n<tr><td>- 과제 진행 환자 : ' + body + '</td></tr>\n<tr><td>- 과제 완료 환자 : 3302</td></tr>';
                     });
                     innerHtml += '</tbody>';
                     var tableRoot = tooltipEl.querySelector('table');
@@ -508,8 +507,8 @@
                         backgroundColor: "rgba(255, 99, 132, 1)",
                         borderColor: 'rgba(255, 99, 132, 0.5)',
                         borderWidth: 1,
-                        pointRadius: 2,
-                        pointHoverRadius: 2,
+                        pointRadius: 3,
+                        pointHoverRadius: 4,
                         data: [10, 20, 40, 50, 60, 70, 50, 85, 90, 52, 94, 76, 90],
                         fill: false,
                         // lineTension: 0,
@@ -523,6 +522,7 @@
                     tooltips: {
                         enabled: false,
                         mode: 'index',
+                        intersect: false,
                         position: 'nearest',
                         //Set the name of the custom function here
                         custom: customTooltips

@@ -15,6 +15,8 @@
 
 .cursor-pointer{cursor: pointer;}
 
+.text-sky{color: #b3cfff !important;}
+
 hr{margin: 0;border-width: 5px;border-color: #eee;}
 .hr{
     border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;height: 8px;background: #f1f2f3;
@@ -28,6 +30,10 @@ textarea{resize: none!important;}
 .invalid-feedback, .valid-feedback{
     width: auto;margin-left: 20px;
 }
+
+.bg-cell-blue{background: #dae3f3 !important;}
+
+.tr-highlight{background: #eee !important;}
 
 .table{
     > thead > tr > th{white-space: nowrap;}
@@ -218,4 +224,21 @@ textarea.form-control{resize: none;}
         display:block;
         height:16px;
     }
+}
+
+.rating {
+    overflow: hidden;
+    .inner{float: left;}
+    input { display: none; }
+    label:before { margin: 5px; line-height: 1; font-size: 24px; font-family: FontAwesome; display: inline-block; content: "\f005"; }
+    .half:before { content: "\f089"; position: absolute; }
+    label { color: #ddd; float: right; margin: 0 !important;}
+
+    input:checked ~ label,
+    &:not(:checked) > label:hover, /* hover current star */
+    &:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+    input:checked + label:hover, /* hover current star when changing rating */
+    input:checked ~ label:hover,
+    label:hover ~ input:checked ~ label, /* lighten current selection */
+    input:checked ~ label:hover ~ label { color: #FFED85;  }
 }
