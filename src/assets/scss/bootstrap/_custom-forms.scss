@@ -369,9 +369,13 @@
     height: $custom-file-height-inner;
     padding: $custom-file-padding-y $custom-file-padding-x;
     line-height: $custom-file-line-height;
-    color: $custom-file-button-color;
-    content: "Browse";
-    @include gradient-bg($custom-file-button-bg);
+    content: "찾기";
+    background-color: $dark;
+    color: $white;
+    width: 70px;
+    text-align: center;
+    // color: $custom-file-button-color;
+    // @include gradient-bg($custom-file-button-bg);
     border-left: inherit;
     @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
   }

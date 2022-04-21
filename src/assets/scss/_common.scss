@@ -165,6 +165,10 @@ textarea.form-control{resize: none;}
 .modal-footer{
     .btn{min-width:70px;}
 }
+.modal-backdrop ~ .modal-backdrop { z-index: 1051; }
+.modal-backdrop ~ .modal-backdrop ~ .modal-backdrop { z-index: 1053; }
+.modal[data-overlap=true] { z-index: 1052; }
+
 
 .mCSB_scrollTools{width: 12px;}
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width: 5px;border-radius: 6px;}
@@ -241,4 +245,18 @@ textarea.form-control{resize: none;}
     input:checked ~ label:hover,
     label:hover ~ input:checked ~ label, /* lighten current selection */
     input:checked ~ label:hover ~ label { color: #FFED85;  }
+}
+
+.custom-file{
+    position: relative;
+    .file-close-btn{
+        height:40px;
+        position: absolute;
+        padding: 10px;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1;
+        z-index: 999;
+    }
 }
