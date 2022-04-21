@@ -146,12 +146,15 @@ textarea.form-control{resize: none;}
 }
 
 .modal-content{border-radius: 0;}
+.modal-footer{
+    .btn{min-width:70px;}
+}
 
 .mCSB_scrollTools{width: 12px;}
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width: 5px;border-radius: 6px;}
 .mCSB_inside>.mCSB_container{margin-right: 20px;}
 
-.title{
+.title, .title-location{
     font-size: 22px;font-weight: 700;margin-bottom: 1.5rem;
 }
 
@@ -170,8 +173,12 @@ textarea.form-control{resize: none;}
 }
 
 
-.card{
-    padding: 1rem 1.5rem;
+.dashboard{
+    .card{
+        .card-body{
+            padding:1.5rem;
+        }
+    }
 }
 
 
