@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">권한 부여</h2>
+                <div class="row justify-content-between align-items-center mb-2">
+                    <div class="col-auto">
+                       
+                    </div>
+                    <div class="col-auto">
+                        <div class="d-flex">
+                            <button type="button" data-target="#modal-enroll-authority" data-toggle="modal" class="btn btn-primary ml-2">+ 등록</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-center table-hover">
+                    <colgroup>
+                        <col style="width: 8%;">
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>권한 명</th>
+                            <th>사용 권한</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>울트라슈퍼관리자</td>
+                            <td><span class="text-underline">대시보드, 환자관리, 과제관리, 콘텐츠관리, 앱 관리, 슈퍼관리자</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>슈퍼관리자</td>
+                            <td><span class="text-underline">대시보드, 환자관리, 과제관리, 콘텐츠관리, 앱 관리</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>관리자</td>
+                            <td><span class="text-underline">대시보드, 환자관리, 과제관리</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">공지사항 관리</h2>
+                <h2 class="title-location">공지사항 등록</h2>
+                <div class="pt-3 border-top">
+                    <table class="table">
+                        <colgroup>
+                            <col style="width: 13%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>등록일자</th>
+                                <td>2022.05.01. PM 5:34</td>
+                            </tr>
+                            <tr>
+                                <th>제목</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td>
+                                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>제공 여부</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">로완병원</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>노출여부 *</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="ExposureN">
+                                    <label for="ExposureN">미노출</label>
+                                    <input type="radio" name="AuthorUse" id="ExposureY">
+                                    <label for="ExposureY">노출</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row justify-content-between align-items-center mt-3">
+                        <div class="col-auto">
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-flex">
+                                <a href="" class="btn btn-outline-dark min-width-100px">취소</a>
+                                <button type="button" class="btn btn-dark ml-2 min-width-100px" data-target="#modal-enroll" data-toggle="modal">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
