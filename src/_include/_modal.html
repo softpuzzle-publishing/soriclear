@@ -136,7 +136,6 @@
         </div>
     </div>
 
-
     <!-- modal : 비밀번호 변경 -->
     <div class="modal" tabindex="-1" id="modal-change-password" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -151,21 +150,29 @@
                     <form action="">
                         <div class="form-group row row-10 align-items-center">
                             <div class="col-12">
-                                <label for="" class="col-form-label">새 비밀번호
-                                </label>
+                                <label for="" class="col-form-label">현재 비밀번호</label>
                             </div>
                             <div class="col-12">
-                                <input type="password" class="form-control">
+                                <input type="password" class="form-control is-invalid" placeholder="비밀번호를 입력하세요">
+                                <div class="invalid-feedback ml-0">비밀번호를 입력하세요.</div>
                             </div>
                         </div>
                         <div class="form-group row row-10 align-items-center">
                             <div class="col-12">
-                                <label for="" class="col-form-label">새 비밀번호 확인
-                                </label>
+                                <label for="" class="col-form-label">새 비밀번호</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="password" class="form-control is-invalid" placeholder="영/숫자, 특수문자 2개 이상 조합, 8~20자 입력">
+                                <div class="invalid-feedback ml-0">이전에 사용된 비밀번호 입니다.</div>
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-12">
+                                <label for="" class="col-form-label">새 비밀번호 확인</label>
                             </div>
                             <div class="col-12">
                                 <!-- 유효성검사 input에  is-invalid 추가 -->
-                                <input type="password" class="form-control is-invalid">
+                                <input type="password" class="form-control is-invalid" placeholder="영/숫자, 특수문자 2개 이상 조합, 8~20자 입력">
                                 <div class="invalid-feedback ml-0">비밀번호가 일치하지 않습니다.</div>
                             </div>
                         </div>
@@ -178,7 +185,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- modal : 관리자 신청 -->
     <div class="modal" tabindex="-1" id="modal-apply-admin" data-backdrop="static">
@@ -269,7 +275,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- modal : 환자 관리 > 선택삭제 -->
     <div class="modal" tabindex="-1" id="modal-delete-patient" data-backdrop="static">
@@ -576,7 +581,9 @@
                                     <input type="password" class="form-control" placeholder="영/숫자, 특수문자 2개 이상 조합, 8~20자 입력 
                                     ">
                                     <!-- 수정시 -->
-                                    <!-- <button type="button" class="btn btn-outline-dark">비밀번호 초기화 </button> -->
+                                    <button type="button" class="btn btn-outline-dark">비밀번호 초기화 </button>
+                                    <!-- 마이페이지에서 접근시 -->
+                                    <button type="button" class="btn btn-outline-dark">비밀번호 수정 </button>
                                 </td>
                             </tr>
                             <tr>
@@ -639,7 +646,7 @@
                 <div class="modal-footer row row-0 justify-content-between">
                     <div class="col">
                         <!-- 수정시 -->
-                        <!-- <button type="button" class="btn btn-outline-dark">삭제</button> -->
+                        <button type="button" class="btn btn-outline-dark">삭제</button>
                     </div>
                     <div class="col-auto">
                         <button type="button" class="btn btn-outline-dark mr-1" data-dismiss="modal">취소</button>
@@ -813,7 +820,7 @@
     </div>
 
     <!-- modal : 관리자 > 권한 부여 > 권한 등록 / 수정 > 권한명 중복 -->
-    <div class="modal" tabindex="-1" id="modal-save" data-backdrop="static">
+    <div class="modal" tabindex="-1" id="modal-duplicate-authority" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -833,4 +840,77 @@
         </div>
     </div>
 
+    <!-- modal : 앱 > 서비스관리 > 서비스 등록 -->
+    <div class="modal" tabindex="-1" id="modal-enroll-service" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">서비스 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-hover table-fixed">
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <!-- <tr>
+                                <th class="text-center">고유ID</th>
+                                <td>AA12-1</td>
+                            </tr> -->
+                            <tr>
+                                <th class="text-center">서비스 구분</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">선택</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">파일 선택</th>
+                                <td>
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control custom-file-input" id="customFile" placeholder="파일을 업로드 해 주세요.">
+                                        <label class="custom-file-label" for="customFile" lang="ko">찾아보기</label>
+                                        <button type="button" class="file-close-btn">
+                                            <i class="fa fa-times-circle"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">노출여부</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">미 노출</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">노출</label>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <th class="text-center">시작일</th>
+                                <td>
+                                    <input type="text" class="form-control form-datepicker">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">종료일</th>
+                                <td>
+                                    <input type="text" class="form-control form-datepicker">
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-dark">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div> 
