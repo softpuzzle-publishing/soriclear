@@ -18,9 +18,8 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title d-none">공지사항 등록</h2>
-                <h2 class="title-location">공지사항 보기</h2>
-                <table class="table table table-fixed">
+                <h2 class="title">알림 등록</h2>
+                <table class="table table-fixed">
                     <colgroup>
                         <col style="width: 13%;">
                         <col>
@@ -29,47 +28,49 @@
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th>병원</th>
-                            <td colspan="3">로완병원</td>
-                        </tr>
-                        <tr>
-                            <th>등록일자</th>
-                            <td colspan="3">2022.05.01. PM 5:34</td>
-                        </tr>
-                        <tr>
-                            <th>제목</th>
+                            <th>고객 유형 * </th>
                             <td colspan="3">
-                                장기요양보험 혜택 알아보세요
+                                <select name="" id="" class="custom-select">
+                                    <option value="">선택</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <th>내용</th>
+                            <th>제목 *</th>
                             <td colspan="3">
-                                <div style="min-height: 300px;">
-                                    <p>노인장기요양보험제도는 보건복지부에서 고시하여, 건강보험공단에서 국민의 세금으로 운영하는 사회보장제도 입니다.</p>
-                                    <p>고령이나 노인성 질병 등의 사유로 일상생활을 혼자서 수행하기 어려운 노인 등에게 신체활동 또는 가사활동 지원 등의</p>
-                                    <p>장기요양급여를 제공하여 노후의 건강증진 및 생활안정을 도모하고 그 가족의 부담을 덜어줌으로써</p>
-                                    <p>국민의 삶의 질을 향상하도록 함을 목적으로 시행하는 사회보험제도입니다.</p>
+                                <input type="text" class="form-control" placeholder="제목을 입력하세요.">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용 *</th>
+                            <td colspan="3">
+                                <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>PUSH 날짜 *</th>
+                            <td colspan="3">
+                                <div class="row row-10">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control form-datepicker">
+                                    </div>
+                                    <div class="col-auto">
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">00시</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">00분</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <th>노출여부</th>
-                            <td colspan="3">
-                                노출
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>등록자</th>
-                            <td>김로완 (이대목동병원)</td>
-                            <th>IP</th>
-                            <td>210:33:25:0</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="row justify-content-between align-items-center mt-3">
                     <div class="col-auto">
-                        <a href="" class="btn btn-outline-dark min-width-90px">목록</a>
                     </div>
                     <div class="col-auto">
                         <div class="d-flex">
