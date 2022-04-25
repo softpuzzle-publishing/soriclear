@@ -59,6 +59,16 @@ textarea{resize: none!important;}
     }
 }
 
+.table-wrap{
+    position: relative;overflow-y: auto;overflow-x: hidden;
+    .table{}
+    .table > thead > tr > th{
+        position: sticky;top:0;
+        &::before{content: '';position: absolute;top:-1px;left: 0;right: 0;height: 1px;background: #e3e3e3;}
+        &::after{content: '';position: absolute;bottom:-1px;left: 0;right: 0;height: 1px;background: #e3e3e3;}
+    }
+}
+
 .table-fixed{table-layout: fixed;}
 
 .table-center{
@@ -67,8 +77,7 @@ textarea{resize: none!important;}
 }
 
 .table-title{
-    font-weight: 700; font-size: 16px; margin-bottom: 10px;
-
+    font-weight: 700; font-size: 16px; margin-bottom: .5rem;
     i{
         font-size:18px;
         margin-right: 10px;
@@ -236,7 +245,7 @@ progress::-webkit-progress-value {background: $blue;}
     overflow: hidden;
     .inner{float: left;}
     input { display: none; }
-    label:before { margin: 5px; line-height: 1; font-size: 24px; font-family: FontAwesome; display: inline-block; content: "\f005"; }
+    label:before { margin: 3px; line-height: 1; font-size: 20px; font-family: "Font Awesome 5 Free"; display: inline-block; content: "\f005"; }
     .half:before { content: "\f089"; position: absolute; }
     label { color: #ddd; float: right; margin: 0 !important;}
 

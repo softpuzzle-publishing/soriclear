@@ -23,13 +23,13 @@
 .my-statistics-summary{
     display: flex;justify-content: center;
     .item{
-        width: 140px;margin: 0 1.5rem;
-        > p{text-align: center;font-weight: 500;font-size: 15px;margin-bottom: .75rem;}
+        width: 120px;margin: 0 1rem;
+        > p{text-align: center;font-weight: 500;font-size: 14px;margin-bottom: .75rem;}
     }
     .circle{
-        border-radius: 50%;height: 140px;background: #d2d1d1;padding: 1.5rem;display: flex;align-items: center;justify-content: center;text-align: center;
+        border-radius: 50%;height: 120px;background: #d2d1d1;padding: 1.5rem;display: flex;align-items: center;justify-content: center;text-align: center;
         > div{flex: 1}
-        strong{font-size: 18px;}
+        strong{font-size: 16px;}
         small{font-size: 12px;}
         .progress{
             margin: .75rem 0;
@@ -46,4 +46,12 @@
             }
         }
     }
+}
+
+[class^=tinnitus-]{
+    display: inline-block;width: 12px;height: 12px;border-radius: 50%;vertical-align: middle;transform: translateY(-1px);
+    &.tinnitus-level-1{background: #70ad47;}
+    &.tinnitus-level-2{background: #ffc000;}
+    &.tinnitus-level-3{background: #ec7d32;}
+    &.tinnitus-level-4{background: #ff2d00;}
 }

@@ -120,71 +120,143 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-between align-items-center mb-2">
-                    <div class="col-auto">
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="table-title">가장 많이 본 강의</div>
+                        <table class="table table-bordered table-center table-hover">
+                            <thead>
+                                <tr>
+                                    <th>순위</th>
+                                    <th>콘텐츠명</th>
+                                    <th>재생 횟수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for(var i = 1; i < 6; i++){
+                                <tr>
+                                    <td>`+ i +`위</td>
+                                    <td class="text-left">풀피리 소리와 잠들기.MP3</td>
+                                    <td>100</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-auto">
-                        <div class="d-flex">
-                            <button type="button" class="btn btn-dark ml-2">과제부여/수정</button>
+                    <div class="col">
+                        <div class="row justify-content-between align-items-center mb-2">
+                            <div class="col-auto">
+                                <div class="table-title mb-0">구입한 강의 학습</div>
+                            </div>
+                            <div class="col-auto">
+                                <strong class="text-primary font-size-16px">구매합계: 60,000원</strong>
+                            </div>
+                        </div>
+                        <div class="table-wrap" style="max-height: 220px">
+                            <table class="table table-bordered table-center table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th class="sort">구매 날짜 <i class="fas fa-caret-down"></i></th>
+                                        <th>콘텐츠명</th>
+                                        <th zclass="sort">재생 횟수 <i class="fas fa-caret-down"></i></th>
+                                        <th>금액</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @@for(var i = 1; i < 10; i++){
+                                    <tr>
+                                        <td>`+ i +`</td>
+                                        <td>2022.12.01</td>
+                                        <td class="text-left">풀피리 소리와 잠들기.MP3</td>
+                                        <td>100</td>
+                                        <td>20,000원</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <table class="table table-bordered table-center table-hover">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>차시</th>
-                            <th>과금</th>
-                            <th>과제명</th>
-                            <th>시작일</th>
-                            <th>종료일</th>
-                            <th>
-                                <div class="dropdown dropright">
-                                    <a href="javascript:;" class="dropdown-toggle text-white" type="button" data-toggle="dropdown" aria-expanded="false" data-offset="0,10">
-                                        상태
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">전체</a>
-                                        <a class="dropdown-item" href="#">완료</a>
-                                        <a class="dropdown-item" href="#">진행중</a>
-                                        <a class="dropdown-item" href="#">미완료</a>
-                                    </div>
-                                </div>
-                            </th>
-                            <th>진행률</th>
-                            <th>최근 학습 날짜</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="tr-highlight">
-                            <td colspan="8" class="text-left font-weight-bold">1주차</td>
-                        </tr>
-                        @@for(var i = 1; i < 4; i++){ <tr>
-                            <td>`+i+`차</td>
-                            <td></td>
-                            <td class="text-left">이명이란?</td>
-                            <td>2022.01.01</td>
-                            <td>2022.01.01</td>
-                            <td>진행중</td>
-                            <td>70%</td>
-                            <td>2022.12.22 15:32</td>
-                            </tr>
-                            }
-                            <tr class="tr-highlight">
-                                <td colspan="8" class="text-left font-weight-bold">2주차</td>
-                            </tr>
-                            @@for(var i = 4; i < 7; i++){ <tr>
-                                <td>`+i+`차</td>
-                                <td></td>
-                                <td class="text-left">이명은 얼마나 흔할까요? 프로그램 메뉴 가이드</td>
-                                <td>2022.01.01</td>
-                                <td>2022.01.01</td>
-                                <td>진행중</td>
-                                <td>70%</td>
-                                <td>2022.12.22 15:32</td>
+                <div class="table-title mt-3">평가 결과</div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="result-chart-line-area">
+                            <canvas id="result-chart-line"></canvas>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <table class="table table-bordered table-center table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>평가명</th>
+                                    <th>평가 날짜</th>
+                                    <th>점수</th>
+                                    <th>결과 <i class="material-icons-outlined font-size-16px align-middle">info</i></th>
+                                    <th>보기</th>
                                 </tr>
-                                }
-                    </tbody>
-                </table>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>사전평가(최초)</td>
+                                    <td>2022.12.01 15:32</td>
+                                    <td>78</td>
+                                    <td>
+                                        <i class="tinnitus-level-1"></i> 심고도 이명
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm">결과보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>중간평가(10차)</td>
+                                    <td>2022.12.01 15:32</td>
+                                    <td>78</td>
+                                    <td>
+                                        <i class="tinnitus-level-2"></i> 심도 이명
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm">결과보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>중간평가(10차)</td>
+                                    <td>2022.12.01 15:32</td>
+                                    <td>78</td>
+                                    <td>
+                                        <i class="tinnitus-level-3"></i> 심도 이명
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm">결과보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>최종평가(30차)</td>
+                                    <td>2022.12.01 15:32</td>
+                                    <td>78</td>
+                                    <td>
+                                        <i class="tinnitus-level-4"></i> 심도 이명
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm">결과보기</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-title d-flex align-items-center"><i class="material-icons-outlined mr-1">info</i>평가 기준</div>
+                                <ol>
+                                    <li class="my-1">0~16점 : 경도 이명</li>
+                                    <li class="my-1">17~37점 : 중등도 이명</li>
+                                    <li class="my-1">38~57점 : 심도 이명</li>
+                                    <li class="my-1">78~100점 : 심고도 이명</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- 컨텐츠 끝 -->
 
             </main>
@@ -197,7 +269,64 @@
     @@include('@@webRoot/_include/_modal.html')
 
     <script>
-
+        window.onload = function () {
+            var ctx = document.getElementById('result-chart-line').getContext('2d');
+            window.myLine = new Chart(ctx, config);
+            myLine.data.datasets[0].pointBackgroundColor[0] = "#70ad47";
+            myLine.data.datasets[0].pointBorderColor[0] = "#70ad47";
+            myLine.data.datasets[0].pointBackgroundColor[1] = "#ffc000";
+            myLine.data.datasets[0].pointBorderColor[1] = "#ffc000";
+            myLine.data.datasets[0].pointBackgroundColor[2] = "#ec7d32";
+            myLine.data.datasets[0].pointBorderColor[2] = "#ec7d32";
+            myLine.data.datasets[0].pointBackgroundColor[3] = "#ff2d00";
+            myLine.data.datasets[0].pointBorderColor[3] = "#ff2d00";
+            myLine.update();
+        };
+        //chartjs - 평가 결과 라인 차트
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["사전평가","중간평가1","중간평가2","최종평가"],
+                datasets: [{
+                    backgroundColor: "#aaa",
+                    borderColor: '#999',
+                    borderWidth: 1,
+                    pointBackgroundColor: [],
+                    pointBorderColor: [],
+                    pointRadius: 4,
+                    pointHoverRadius: 5,
+                    data: [22, 45, 48, 78],
+                    fill: false,
+                    lineTension: 0,
+                }],
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: '#333',
+                            fontSize: 13,
+                            fontFamily: 'Noto Sans KR',
+                            padding: 10,
+                        },
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            fontColor: '#333',
+                            fontSize: 12,
+                            fontFamily: 'Noto Sans KR',
+                            stepSize: 10,
+                            beginAtZero: true,
+                            padding: 10,
+                        },
+                    }]
+                }
+            }
+        };
     </script>
 
 </body>
