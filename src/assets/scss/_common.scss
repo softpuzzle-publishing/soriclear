@@ -245,7 +245,7 @@ progress::-webkit-progress-value {background: $blue;}
     overflow: hidden;
     .inner{float: left;}
     input { display: none; }
-    label:before { margin: 3px; line-height: 1; font-size: 20px; font-family: "Font Awesome 5 Free"; display: inline-block; content: "\f005"; }
+    label:before { margin: 3px; line-height: 1; font-size: 20px; font-family: "Font Awesome 5 Free"; display: inline-block; content: "\f005";font-weight: 900; }
     .half:before { content: "\f089"; position: absolute; }
     label { color: #ddd; float: right; margin: 0 !important;}
 
