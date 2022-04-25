@@ -19,3 +19,31 @@
         object-position: center center;
     }
 }
+
+.my-statistics-summary{
+    display: flex;justify-content: center;
+    .item{
+        width: 140px;margin: 0 1.5rem;
+        > p{text-align: center;font-weight: 500;font-size: 15px;margin-bottom: .75rem;}
+    }
+    .circle{
+        border-radius: 50%;height: 140px;background: #d2d1d1;padding: 1.5rem;display: flex;align-items: center;justify-content: center;text-align: center;
+        > div{flex: 1}
+        strong{font-size: 18px;}
+        small{font-size: 12px;}
+        .progress{
+            margin: .75rem 0;
+            background: #fff;
+            progress{background: #fff;}
+            progress::-webkit-progress-bar{
+                background-color: #fff;
+            }
+            progress::-moz-progress-bar{
+                background-color: #fff;
+            }
+            progress::-webkit-progress-value{
+                background-color: $yellow;
+            }
+        }
+    }
+}
