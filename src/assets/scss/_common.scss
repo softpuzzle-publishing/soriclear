@@ -8,6 +8,7 @@
 .font-size-28px{font-size: 28px !important;}
 .font-size-30px{font-size: 30px !important;}
 
+.min-width-80px{min-width: 80px;}
 .min-width-90px{min-width: 90px;}
 .min-width-100px{min-width: 100px;}
 .width-200px{width:200px;}
@@ -53,6 +54,9 @@ textarea{resize: none!important;}
     .tr-selected{background: #fff8e3;
         &:hover{background: #f9eecd;}
     }
+    .dropdown-toggle{
+        -webkit-appearance: none;
+    }
 }
 
 .table-fixed{table-layout: fixed;}
@@ -70,7 +74,6 @@ textarea{resize: none!important;}
         margin-right: 10px;
     }
 }
-
 
 input[type=file].form-control{
     padding-top: 3px;
@@ -201,32 +204,31 @@ textarea.form-control{resize: none;}
     }
 }
 
-
+progress { appearance: none;overflow: hidden;height: 10px; }
+progress::-webkit-progress-bar { background:#f0f0f0; box-shadow: inset 3px 3px 10px #ccc; }
+progress::-webkit-progress-value {background: $blue;}
 .progress{
     width:100%;
-    height:16px;
-    background:$gray-200;
+    height:10px;
+    background:$gray-100;
+    overflow: hidden;
     progress{
-        background-color: $gray-200;
+        background-color: $gray;
         border: 0;
         display:block;
         width:100%;
-        height:16px;
     }
     progress::-webkit-progress-bar{
-        background-color: $gray-200;
+        background-color: $gray-100;
         display:block;
-        height:16px;
     }
     progress::-webkit-progress-value{
-        background-color: $primary;
+        background-color: $blue;
         display:block;
-        height:16px;
     }
     progress::-moz-progress-bar{
         background-color: $gray-200;
         display:block;
-        height:16px;
     }
 }
 

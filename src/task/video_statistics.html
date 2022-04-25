@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title d-none">동영상 강의 관리</h2>
+                <h2 class="title-location">동영상 강의 관리 &gt; 홍길동님 학습현황</h2>
+                <table class="table table-bordered table-center">
+                    <thead>
+                        <tr>
+                            <th>환자명</th>
+                            <th>생년월일</th>
+                            <th>성별</th>
+                            <th>과제 시작일</th>
+                            <th>과제 종료일</th>
+                            <th>진행 상태</th>
+                            <th>진행률</th>
+                            <th class="bg-cell-blue">사전평가</th>
+                            <th class="bg-cell-blue">중간평가1</th>
+                            <th class="bg-cell-blue">중간평가2</th>
+                            <th class="bg-cell-blue">최종평가</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>홍길동</td>
+                            <td>1960-01-01</td>
+                            <td>여</td>
+                            <td>2022.01.01</td>
+                            <td>2022.02.01</td>
+                            <td>진행중(12차)</td>
+                            <td>70%</td>
+                            <td>85점(심고도이명)</td>
+                            <td>85점(심고도이명)</td>
+                            <td>50점(고도이명)</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="tab-custom mt-4 mb-3">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="video_mylecture.html" role="tab">나의 강의</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" href="video_statistics.html" role="tab">통계</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="video_thinking_history.html" role="tab">생각기록</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="video_checkpoint.html" role="tab">체크포인트/소감</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="text-center">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-dark min-width-80px">전체</button>
+                        <button type="button" class="btn btn-outline-dark min-width-80px">월</button>
+                        <button type="button" class="btn btn-outline-dark min-width-80px active">주간</button>
+                        <button type="button" class="btn btn-outline-dark min-width-80px">일간</button>
+                    </div>
+                </div>
+                <div class="text-center d-flex justify-content-center my-4">
+                    <button type="button"><i class="material-icons">arrow_back_ios_new</i></button>
+                    <strong class="mx-3 font-size-16px">2022년 4월 1일 ~ 2022년 4월 8일</strong>
+                    <button type="button"><i class="material-icons">arrow_forward_ios</i></button>
+                </div>
+                <div class="my-statistics-summary">
+                    <div class="item">
+                        <p>수행률</p>
+                        <div class="circle">
+                            <div>
+                                <strong>25%</strong>
+                                <div class="progress">
+                                    <progress max="100" value="25"></progress>
+                                </div>
+                                <small>(3/30회차)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>총 누적 학습 시간</p>
+                        <div class="circle">
+                            <div>
+                                <strong>104시간 <br>12분 34초</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>일 평균 학습 시간</p>
+                        <div class="circle">
+                            <div>
+                                <strong>23분 23초</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>자주 이용하는 시간</p>
+                        <div class="circle">
+                            <div>
+                                <strong>오후 <br>11시 30분</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center mb-2">
+                    <div class="col-auto">
+                    </div>
+                    <div class="col-auto">
+                        <div class="d-flex">
+                            <button type="button" class="btn btn-dark ml-2">과제부여/수정</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-center table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>차시</th>
+                            <th>과금</th>
+                            <th>과제명</th>
+                            <th>시작일</th>
+                            <th>종료일</th>
+                            <th>
+                                <div class="dropdown dropright">
+                                    <a href="javascript:;" class="dropdown-toggle text-white" type="button" data-toggle="dropdown" aria-expanded="false" data-offset="0,10">
+                                        상태
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">전체</a>
+                                        <a class="dropdown-item" href="#">완료</a>
+                                        <a class="dropdown-item" href="#">진행중</a>
+                                        <a class="dropdown-item" href="#">미완료</a>
+                                    </div>
+                                </div>
+                            </th>
+                            <th>진행률</th>
+                            <th>최근 학습 날짜</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr-highlight">
+                            <td colspan="8" class="text-left font-weight-bold">1주차</td>
+                        </tr>
+                        @@for(var i = 1; i < 4; i++){ <tr>
+                            <td>`+i+`차</td>
+                            <td></td>
+                            <td class="text-left">이명이란?</td>
+                            <td>2022.01.01</td>
+                            <td>2022.01.01</td>
+                            <td>진행중</td>
+                            <td>70%</td>
+                            <td>2022.12.22 15:32</td>
+                            </tr>
+                            }
+                            <tr class="tr-highlight">
+                                <td colspan="8" class="text-left font-weight-bold">2주차</td>
+                            </tr>
+                            @@for(var i = 4; i < 7; i++){ <tr>
+                                <td>`+i+`차</td>
+                                <td></td>
+                                <td class="text-left">이명은 얼마나 흔할까요? 프로그램 메뉴 가이드</td>
+                                <td>2022.01.01</td>
+                                <td>2022.01.01</td>
+                                <td>진행중</td>
+                                <td>70%</td>
+                                <td>2022.12.22 15:32</td>
+                                </tr>
+                                }
+                    </tbody>
+                </table>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
