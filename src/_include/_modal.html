@@ -594,9 +594,7 @@
                         <tbody>
                             <tr>
                                 <th class="text-center">날짜</th>
-                                <td>2022-01-01 금</td>
-                                <th class="text-center">일시</th>
-                                <td>15시 25분</td>
+                                <td colspan="3">2022-01-01 금</td>
                             </tr>
                             <tr>
                                 <th class="text-center">상황키워드</th>
@@ -605,20 +603,41 @@
                                 <td>나쁨, 우울</td>
                             </tr>
                             <tr>
-                                <th class="text-center">생각기록</th>
-                                <td colspan="3">자려고 누웠더니 삐 소리에 잠을 못 자서 밥을 굶었다.</td>
+                                <td colspan="4">자려고 누웠더니 삐 소리에 잠을 못 자서 밥을 굶었다.</td>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="row justify-content-between align-items-center mt-3 mb-2">
-                        <div class="col-auto">
-                            <div class="table-title font-size-14px mb-0">전문가 답변</div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="text-primary">홍길동(로완병원) / 2022-05-05 23:34</div>
-                        </div>
-                    </div>
-                    <textarea name="" id="" cols="" rows="5" class="form-control" placeholder="입력하세요"></textarea>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>답변</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <textarea name="" id="" cols="" rows="5" class="form-control" placeholder="내용을 입력 하세요. 
+                                    "></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered table-hover table-fixed">
+                        <colgroup>
+                            <col style="width:110px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>작성자</th>
+                                <td>홍길동 (로완병원)</td>
+                            </tr>
+                            <tr>
+                                <th>작성시간</th>
+                                <td>2022-05-05  23:34</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-outline-dark mr-1" data-dismiss="modal">취소</button>
