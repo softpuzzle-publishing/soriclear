@@ -18,27 +18,21 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title d-none">공지사항 등록</h2>
-                <h2 class="title-location">공지사항 관리</h2>
+                <h2 class="title">공지사항</h2>
                 <div class="search-condition">
                     <div class="row">
                         <div class="col">
                             <div class="d-flex align-items-center">
                                 <label for="">구분</label>
                                 <select name="" id="" class="custom-select d-inline-block w-auto">
-                                    <option value="">로완병원</option>
+                                    <option value="">전체</option>
+                                </select>
+                                <label for="">노출</label>
+                                <select name="" id="" class="custom-select d-inline-block w-auto">
+                                    <option value="">전체</option>
                                 </select>
                                 <label for="">검색</label>
-                                <div class="row row-10">
-                                    <div class="col-auto">
-                                        <select name="" id="" class="custom-select d-inline-block w-auto">
-                                            <option value="">전체</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control d-inline-block w-auto" placeholder="입력하세요.">
-                                    </div>
-                                </div>
+                                <input type="text" class="form-control d-inline-block w-auto" placeholder="입력하세요.">
                             </div>
                         </div>
                         <div class="col-auto">
@@ -70,8 +64,8 @@
                             <th>NO</th>
                             <th>작성 구분</th>
                             <th>내용</th>
-                            <th class="sort">노출여부 <i class="fas fa-caret-down"></i></th>
-                            <th class="sort">등록일 <i class="fas fa-caret-down"></i></th>
+                            <th>노출여부</th>
+                            <th>작성일</th>
                             <th>삭제</th>
                         </tr>
                     </thead>

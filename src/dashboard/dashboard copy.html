@@ -18,7 +18,33 @@
             <main id="content" role="main" class="">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">대시보드</h2>
+                <h2 class="title mb-0">대시보드</h2>
+                <div class="row row-0 align-items-center justify-content-between mb-3">
+                    <div class="col">
+                    </div>
+                    <div class="col-auto">
+                        <div class="row row-10 align-items-center justify-content-end">
+                            <div class="col-auto">기간</div>
+                            <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
+                            <div class="col-auto">~</div>
+                            <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
+                            <div class="col-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-gray active">당일</button>
+                                    <button type="button" class="btn btn-outline-gray">1주일</button>
+                                    <button type="button" class="btn btn-outline-gray">1개월</button>
+                                    <button type="button" class="btn btn-outline-gray">3개월</button>
+                                    <button type="button" class="btn btn-outline-gray">6개월</button>
+                                    <button type="button" class="btn btn-outline-gray">1년</button>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-primary min-width-100px">검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row row-20 align-items-stretch">
                     <div class="col-7">
                         <div class="card shadow-sm h-100">
@@ -51,22 +77,18 @@
                                     </div>
                                 </div>
                                 <div class="row row-20 p-t-15 align-items-center">
-                                    <div class="col-xl-8">
+                                    <div class="col-8">
                                         <div class="patient-chart-line-area">
                                             <canvas id="patient-chart-line"></canvas>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 m-t-20 mt-xl-0">
-                                        <div class="row row-20 flex-xl-column">
-                                            <div class="col-xl-12 col-6">
-                                                <div class="patient-chart-age-area py-1 border-bottom">
-                                                    <canvas id="patient-chart-age"></canvas>
-                                                </div>
+                                    <div class="col-4">
+                                        <div class="d-flex flex-column">
+                                            <div class="patient-chart-age-area py-1 border-bottom">
+                                                <canvas id="patient-chart-age"></canvas>
                                             </div>
-                                            <div class="col-xl-12 col-6">
-                                                <div class="patient-chart-gender-area py-1">
-                                                    <canvas id="patient-chart-gender"></canvas>
-                                                </div>
+                                            <div class="patient-chart-gender-area py-1">
+                                                <canvas id="patient-chart-gender"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -75,115 +97,15 @@
                         </div>
                     </div>
                     <div class="col-5">
-                        <div class="h-100">
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="table-title">공지사항</div>
-                                        <a href="#none">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                    </div>
-                                    <table class="table table-fixed table-center">
-                                        <colgroup>
-                                            <col>
-                                            <col style="width: 20%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>제목</th>
-                                                <th>작성일</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for(var i = 0; i < 5; i++){
-                                            <tr>
-                                                <td class="text-left">
-                                                    <a href="" class="text-truncate d-block">
-                                                        서울지역 병원 프로모션 진행 서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행
-                                                    </a>
-                                                </td>
-                                                <td>2022.02.02(월)</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">매출현황</div>
                                 </div>
-                            </div>
-                            <div class="card shadow-sm m-t-20">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="table-title">소리치료 음원 TOP 5 </div>
-                                    </div>
-                                    <table class="table table-fixed table-center">
-                                        <colgroup>
-                                            <col style="width: 60px">
-                                            <col>
-                                            <col style="width: 130px">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>순위</th>
-                                                <th>제목</th>
-                                                <th>조회수</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for(var i = 1; i < 6; i++){
-                                            <tr>
-                                                <td>`+i+`</td>
-                                                <td class="text-left">
-                                                    <a href="" class="text-truncate d-block">
-                                                        서울지역 병원 프로모션 진행 서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행
-                                                    </a>
-                                                </td>
-                                                <td>324239회</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card shadow-sm m-t-20">
-                    <div class="card-body">
-                        <div class="row row-30 align-items-stretch">
-                            <div class="col-12">
-                                <div class="row row-0 align-items-center justify-content-between mb-3">
-                                    <div class="col">
-                                        <div class="table-title mb-0">매출현황</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="row row-10 align-items-center justify-content-end">
-                                            <div class="col-auto">기간</div>
-                                            <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
-                                            <div class="col-auto">~</div>
-                                            <div class="col-2"><input type="text" class="form-control form-datepicker"></div>
-                                            <div class="col-auto">
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-outline-gray active">당일</button>
-                                                    <button type="button" class="btn btn-outline-gray">1주일</button>
-                                                    <button type="button" class="btn btn-outline-gray">1개월</button>
-                                                    <button type="button" class="btn btn-outline-gray">3개월</button>
-                                                    <button type="button" class="btn btn-outline-gray">6개월</button>
-                                                    <button type="button" class="btn btn-outline-gray">1년</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <button type="button" class="btn btn-primary min-width-100px">검색</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-7 m-t-10">
                                 <div class="row row-20">
                                     <div class="col-7">
-                                        <div class="d-grid purchase-situation h-100">
-                                            <div class="item">
+                                        <div class="d-grid purchase-situation">
+                                            <div class="item ">
                                                 <p class="font-size-16px">총 매출</p>
                                                 <strong class="text-blue align-self-end font-size-26px">40.000,000원 </strong>
                                             </div>
@@ -198,17 +120,15 @@
                                         </div>
                                     </div>
                                     <div class="col-5">
-                                        <div class="category-chart-area m-t-20">
+                                        <div class="category-chart-area">
                                             <canvas id="category-chart" height="220px"></canvas>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-5 m-t-10">
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between mt-4">
                                     <div class="table-title">콘텐츠 구매 리스트</div>
                                 </div>
-                                <table class="table table-center">
+                                <table class="table table-bordered table-center">
                                     <colgroup>
                                         <col style="width: 60px;">
                                         <col>
@@ -222,7 +142,9 @@
                                             <th>카테고리</th>
                                             <th>콘텐츠명</th>
                                             <th>판매수</th>
-                                            <th>수익</th>
+                                            <th class="sort">
+                                                수익 <i class="fas fa-caret-down"></i>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -241,26 +163,110 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 슈퍼관리자용 추가 화면 -->
+                <!-- 파트너 일때 노출 -->
                 <div class="row row-20 align-items-stretch m-t-20">
-                    <div class="col-6">
+                    <div class="col-6 ">
                         <div class="card shadow-sm h-100">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <div class="table-title">상위 수익률</div>
+                                    <div class="table-title">공지사항</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-                                <table class="table table-center">
+                                <table class="table table-fixed table-center">
+                                    <colgroup>
+                                        <col>
+                                        <col style="width: 20%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>제목</th>
+                                            <th>작성일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for(var i = 0; i < 5; i++){
+                                        <tr>
+                                            <td class="text-left">
+                                                <a href="" class="text-truncate d-block">
+                                                    서울지역 병원 프로모션 진행 서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행
+                                                </a>
+                                            </td>
+                                            <td>2022.02.02(월)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">우리병원 소리치료 음원 TOP 5</div>
+                                    <a href="#none">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                                <table class="table table-fixed table-center">
+                                    <colgroup>
+                                        <col style="width: 60px">
+                                        <col>
+                                        <col style="width: 130px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순위</th>
+                                            <th>제목</th>
+                                            <th>조회수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for(var i = 1; i < 6; i++){
+                                        <tr>
+                                            <td>`+i+`</td>
+                                            <td class="text-left">
+                                                <a href="" class="text-truncate d-block">
+                                                    서울지역 병원 프로모션 진행 서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행
+                                                </a>
+                                            </td>
+                                            <td>324239회
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 파트너 일때 노출 끝 -->
+
+                <!-- 슈퍼관리자 일때 노출 -->
+                <div class="row row-20 align-items-stretch m-t-20">
+                    <div class="col-7">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">병원별 매출액</div>
+                                    <a href="#none">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                                <table class="table table-bordered table-center">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>병원명</th>
-                                            <th>판매환자</th>
-                                            <th>판매수</th>
-                                            <th>수익</th>
+                                            <th class="sort">
+                                                판매수 <i class="fas fa-caret-down"></i>
+                                            </th>
+                                            <th class="sort">
+                                                수익 <i class="fas fa-caret-down"></i>
+                                            </th>
                                             <th>매출율</th>
                                         </tr>
                                     </thead>
@@ -269,7 +275,6 @@
                                         <tr>
                                             <td>`+ i +`</td>
                                             <td>OO병원</td>
-                                            <td>`+ i +`</td>
                                             <td>2,00`+ i +`</td>
                                             <td>40,000,00`+ i +`</td>
                                             <td>
@@ -286,11 +291,49 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-5">
                         <div class="card shadow-sm h-100">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <div class="table-title">운영자 승인 대기자 명단 (5)</div>
+                                    <div class="table-title">공지사항</div>
+                                    <a href="#none">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                                <table class="table table-fixed table-center">
+                                    <colgroup>
+                                        <col>
+                                        <col style="width: 130px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>제목</th>
+                                            <th>작성일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for(var i = 0; i < 5; i++){
+                                        <tr>
+                                            <td class="text-left">
+                                                <a href="" class="text-truncate d-block">
+                                                    서울지역 병원 프로모션 진행 서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행
+                                                </a>
+                                            </td>
+                                            <td>2022.02.02(월)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-7 m-t-20">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">운영자 승인 대기자 명단</div>
                                     <a href="#none">
                                         <i class="fas fa-plus"></i>
                                     </a>
@@ -324,8 +367,49 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-5 m-t-20">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="table-title">우리병원 소리치료 음원 TOP 5</div>
+                                    <a href="#none">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                                <table class="table table-fixed text-center">
+                                    <colgroup>
+                                        <col style="width: 60px">
+                                        <col>
+                                        <col style="width: 130px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순위</th>
+                                            <th>제목</th>
+                                            <th>조회수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for(var i = 1; i < 6; i++){
+                                        <tr>
+                                            <td>`+i+`</td>
+                                            <td class="text-left">
+                                                <a href="" class="text-truncate d-block">
+                                                    서울지역 병원 프로모션 진행 서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행서울지역 병원 프로모션 진행
+                                                </a>
+                                            </td>
+                                            <td>324239회</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- 슈퍼관리자용 추가 화면 끝 -->
+                <!-- 슈퍼관리자 일때 노출 끝 -->
+
                 <!-- 컨텐츠 끝 -->
 
             </main>

@@ -18,24 +18,26 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">병원 관리</h2>
+                <h2 class="title d-none">결제 및 정산</h2>
+                <h2 class="title-location"><a href="javascript:history.back();"><i class="fas fa-chevron-left mr-3"></i></a>김로완 님 결제 상세 </h2>
                 <div class="search-condition">
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="col">
                             <div class="d-flex align-items-center">
-                                <label for="">병원</label>
-                                <select name="" id="" class="custom-select d-inline-block w-auto">
-                                    <option value="">전체</option>
-                                </select>
-                                <label for="">검색</label>
-                                <div class="row row-10">
+                                <label for="">결제 </label>
+                                <div class="row row-10 align-items-center">
+                                    <div class="col-2"><input type="text" class="form-control form-datepicker hasDatepicker" id="dp1650867476100"></div>
+                                    <div class="col-auto">~</div>
+                                    <div class="col-2"><input type="text" class="form-control form-datepicker hasDatepicker" id="dp1650867476101"></div>
                                     <div class="col-auto">
-                                        <select name="" id="" class="custom-select d-inline-block w-auto">
-                                            <option value="">전체</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control d-inline-block w-auto" placeholder="입력하세요.">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-outline-gray active">당일</button>
+                                            <button type="button" class="btn btn-outline-gray">1주일</button>
+                                            <button type="button" class="btn btn-outline-gray">1개월</button>
+                                            <button type="button" class="btn btn-outline-gray">3개월</button>
+                                            <button type="button" class="btn btn-outline-gray">6개월</button>
+                                            <button type="button" class="btn btn-outline-gray">1년</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -47,17 +49,19 @@
                 </div>
                 <div class="row justify-content-between align-items-center mb-2">
                     <div class="col-auto">
-                        <div><span>총 100개</span></div>
+                        <div><span>총 100개</span><span>&ensp;|&ensp;결제 금액 : 200,000원</span></div>
                     </div>
                     <div class="col-auto">
                         <div class="d-flex">
-                            <button type="button" data-target="#modal-enroll-hospital" data-toggle="modal" class="btn btn-primary ml-2">등록</button>
+                            <a href="javascript:;" class="btn btn-dark">엑셀 다운로드</a>
                         </div>
                     </div>
                 </div>
                 <table class="table table-bordered table-center table-hover">
                     <colgroup>
                         <col style="min-width: 50px;">
+                        <col>
+                        <col style="width: 40%;">
                         <col>
                         <col>
                         <col>
@@ -66,20 +70,24 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>NO</th>
-                            <th>병원</th>
-                            <th>대표 연락처</th>
-                            <th>지역</th>
-                            <th>생성날짜</th>
+                            <th>결제날짜</th>
+                            <th>학습명</th>
+                            <th>과제시작일</th>
+                            <th>과제종료일</th>
+                            <th>금액</th>
+                            <th>병원명</th>
                         </tr>
                     </thead>
                     <tbody>
                         @@for(var i = 100; i > 90; i--){
                         <tr>
                             <td>`+i+`</td>
-                            <td><a href="#modal-enroll-hospital" data-toggle="modal" class="text-underline">로완병원</a></td>
-                            <td>01021541215</td>
-                            <td>강남구</td>
-                            <td>0000.00.00</td>
+                            <td>2022.12.01</td>
+                            <td class="text-left">이명은 얼마나 흔할까요?  프로그램 메뉴 가이드</td>
+                            <td>2022.12.01</td>
+                            <td>2022.12.01</td>
+                            <td>20,000원</td>
+                            <td>00병원</td>
                         </tr>
                         }
                     </tbody>

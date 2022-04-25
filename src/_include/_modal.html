@@ -228,6 +228,14 @@
                         </div>
                         <div class="form-group row row-10 align-items-center">
                             <div class="col-3">
+                                <label for="">비밀번호</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row row-10 align-items-center">
+                            <div class="col-3">
                                 <label for="">이름</label>
                             </div>
                             <div class="col-9">
@@ -310,6 +318,27 @@
                 </div>
                 <div class="modal-body p-5 text-center">
                     삭제 하시겠습니까?
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">아니오</button>
+                    <button type="button" class="btn btn-dark">예</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : [공통] > 취소 -->
+    <div class="modal" tabindex="-1" id="modal-cancel" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-center">
+                    작성중인 내용을 취소하고<br> 이전 화면으로 돌아가시겠습니까? 
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-outline-dark" data-dismiss="modal">아니오</button>
@@ -690,12 +719,12 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="my-3 text-danger text-center">
+                        알림 문구
+                    </div>
                 </div>
                 <div class="modal-footer row row-0">
-                    <div class="col">
-                        <!-- 수정시 -->
-                        <button type="button" class="btn btn-outline-dark">삭제</button>
-                    </div>
+                    <div class="col"></div>
                     <div class="col-auto">
                         <button type="button" class="btn btn-outline-dark mr-1" data-dismiss="modal">취소</button>
                         <button type="button" class="btn btn-dark">저장</button>
@@ -825,6 +854,7 @@
                                 <th class="text-center">권한 명*</th>
                                 <td>
                                     <input type="text" class="form-control">
+                                    울트라슈퍼관리자
                                 </td>
                             </tr>
                             <tr>
@@ -906,10 +936,6 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th class="text-center">고유ID</th>
-                                <td>AA12-1</td>
-                            </tr>
-                            <tr>
                                 <th class="text-center">서비스 구분</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
@@ -920,12 +946,16 @@
                             <tr>
                                 <th class="text-center">파일 선택</th>
                                 <td>
-                                    <div class="custom-file">
-                                        <input type="file" class="form-control custom-file-input" id="customFile" placeholder="파일을 업로드 해 주세요.">
-                                        <label class="custom-file-label" for="customFile" lang="ko">찾아보기</label>
-                                        <button type="button" class="file-close-btn">
-                                            <i class="fa fa-times-circle"></i>
-                                        </button>
+                                    <div class="row row-10">
+                                        <div class="col">
+                                            <div class="custom-file">
+                                                <input type="file" class="form-control custom-file-input" id="customFile" placeholder="파일을 업로드 해 주세요.">
+                                                <label class="custom-file-label" for="customFile" lang="ko">찾아보기</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary">미리보기</button>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -989,7 +1019,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <input type="checkbox" name="" id="pay_contents">
-                                            <label for="pay_contents">유료 컨텐츠</label>
+                                            <label for="pay_contents">공개 컨텐츠</label>
                                         </div>
                                     </div>
                                 </td>
@@ -1007,7 +1037,7 @@
                                         <div class="col">
                                             <div class="custom-file">
                                                 <input type="file" class="form-control custom-file-input" id="customFile" placeholder="파일을 업로드 해 주세요.">
-                                                <label class="custom-file-label" for="customFile" lang="ko">찾아보기</label>
+                                                <label class="custom-file-label" for="customFile" lang="ko">찾기</label>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -1023,7 +1053,7 @@
                                         <div class="col">
                                             <div class="custom-file">
                                                 <input type="file" class="form-control custom-file-input" id="customFile2" placeholder="파일을 업로드 해 주세요.">
-                                                <label class="custom-file-label" for="customFile2" lang="ko">찾아보기</label>
+                                                <label class="custom-file-label" for="customFile2" lang="ko">찾기</label>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -1047,7 +1077,7 @@
                 <div class="modal-footer row row-0 ">
                     <div class="col">
                         <!-- 수정시 -->
-                        <button type="button" class="btn btn-outline-dark">삭제</button>
+                        <button type="button" class="btn btn-secondary">삭제</button>
                     </div>
                     <div class="col-auto">
                         <button type="button" class="btn btn-outline-dark mr-1" data-dismiss="modal">취소</button>

@@ -18,8 +18,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title d-none">알림 등록</h2>
-                <h2 class="title-location">알림 관리</h2>
+                <h2 class="title">알림</h2>
                 <div class="search-condition">
                     <div class="row">
                         <div class="col">
@@ -28,17 +27,12 @@
                                 <select name="" id="" class="custom-select d-inline-block w-auto">
                                     <option value="">로완병원</option>
                                 </select>
+                                <label for="">상태</label>
+                                <select name="" id="" class="custom-select d-inline-block w-auto">
+                                    <option value="">전체</option>
+                                </select>
                                 <label for="">검색</label>
-                                <div class="row row-10">
-                                    <div class="col-auto">
-                                        <select name="" id="" class="custom-select d-inline-block w-auto">
-                                            <option value="">전체</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control d-inline-block w-auto" placeholder="입력하세요.">
-                                    </div>
-                                </div>
+                                <input type="text" class="form-control d-inline-block w-auto" placeholder="입력하세요.">
                             </div>
                         </div>
                         <div class="col-auto">
@@ -60,7 +54,6 @@
                     <colgroup>
                         <col style="min-width: 50px;">
                         <col>
-                        <col>
                         <col style="width: 50%;">
                         <col>
                         <col>
@@ -69,21 +62,29 @@
                         <tr>
                             <th>NO</th>
                             <th>작성 구분</th>
-                            <th class="sort">고객유형 <i class="fas fa-caret-down"></i></th>
                             <th>제목</th>
-                            <th>알림 상태</th>
+                            <th class="sort">알림 상태 <i class="fas fa-caret-down"></i></th>
                             <th>알림 날짜</th>
                             <th>삭제</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr class="bg-cell-blue">
+                            <td>101</td>
+                            <td>로완병원</td>
+                            <td class="text-left"><a href="alram_detail.html" class="text-underline">경증 치매환자 이벤트!</a></td>
+                            <td>알람대기</td>
+                            <td>0000.00.00</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-target="#modal-delete" data-toggle="modal">삭제</button>
+                            </td>
+                        </tr>
                         @@for(var i = 100; i > 90; i--){
                         <tr>
                             <td>`+i+`</td>
                             <td>로완병원</td>
-                            <td>일반</td>
                             <td class="text-left"><a href="alram_detail.html" class="text-underline">경증 치매환자 이벤트!</a></td>
-                            <td>알람대기</td>
+                            <td>완료</td>
                             <td>0000.00.00</td>
                             <td>
                                 <button type="button" class="btn btn-outline-dark btn-sm" data-target="#modal-delete" data-toggle="modal">삭제</button>

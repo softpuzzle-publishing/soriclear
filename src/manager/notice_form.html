@@ -19,42 +19,41 @@
 
                 <!-- 컨텐츠 시작 -->
                 <h2 class="title d-none">공지사항 관리</h2>
-                <h2 class="title-location">공지사항 등록</h2>
+                <h2 class="title-location"><a href="javascript:history.back();"><i class="fas fa-chevron-left mr-3"></i></a>공지사항 등록</h2>
                 <table class="table table-fixed">
                     <colgroup>
-                        <col style="width: 13%;">
-                        <col>
                         <col style="width: 13%;">
                         <col>
                     </colgroup>
                     <tbody>
                         <tr>
                             <th>등록일자</th>
-                            <td colspan="3">2022.05.01. PM 5:34</td>
+                            <td>2022.05.01. PM 5:34</td>
                         </tr>
                         <tr>
                             <th>제목</th>
-                            <td colspan="3">
+                            <td>
                                 <input type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
                             <th>내용</th>
-                            <td colspan="3">
+                            <td>
                                 <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
                             </td>
                         </tr>
                         <tr>
                             <th>제공 여부</th>
-                            <td colspan="3">
-                                <select name="" id="" class="custom-select">
-                                    <option value="">로완병원</option>
-                                </select>
+                            <td>
+                                <input type="checkbox" id="offerN">
+                                <label for="offerN" class="m-l-5">병원</label>
+                                <input type="checkbox" id="offerY">
+                                <label for="offerY" class="m-l-5">서비스 앱</label>
                             </td>
                         </tr>
                         <tr>
                             <th>노출여부 *</th>
-                            <td colspan="3">
+                            <td>
                                 <input type="radio" name="AuthorUse" id="ExposureN">
                                 <label for="ExposureN">미노출</label>
                                 <input type="radio" name="AuthorUse" id="ExposureY">
@@ -68,7 +67,7 @@
                     </div>
                     <div class="col-auto">
                         <div class="d-flex">
-                            <a href="" class="btn btn-outline-dark min-width-90px">취소</a>
+                            <a href="" class="btn btn-outline-dark min-width-90px" data-target="#modal-cancel" data-toggle="modal">취소</a>
                             <button type="button" class="btn btn-dark ml-2 min-width-90px" data-target="#modal-enroll" data-toggle="modal">등록</button>
                         </div>
                     </div>

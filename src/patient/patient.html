@@ -18,8 +18,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title d-none">환자관리</h2>
-                <h2 class="title-location">환자관리 <span class="font-size-16px">전체 <span class="text-primary">1,234</span></span></h2>
+                <h2 class="title">환자관리</h2>
                 <div class="search-condition">
                     <div class="row">
                         <div class="col">
@@ -58,7 +57,7 @@
                         <div class="d-flex">
                             
                             <button type="button" class="btn btn-danger ml-2" data-target="#modal-delete-patient" data-toggle="modal">선택삭제</button>
-                            <button type="button" class="btn btn-primary ml-2">등록</button>
+                            <a href="patient_form.html" type="button" class="btn btn-primary ml-2">등록</a>
                         </div>
                     </div>
                 </div>
@@ -74,13 +73,16 @@
                             <th>연락처</th>
                             <th class="sort">최근 접속일<i class="fas fa-caret-down"></i></th>
                             <th class="sort">가입일<i class="fas fa-caret-down"></i></th>
-                            <th>과금상태</th>
+                            <th>구매상태</th>
                             <th>회원상태</th>
                             <th>담당병원</th>
                             <th>강의관리</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td colspan="13">내용이 없습니다.</td>
+                        </tr>
                         @@for(var i = 100; i > 90; i--){
                         <tr>
                             <td><input type="checkbox"></td>
@@ -102,21 +104,6 @@
                         }
                     </tbody>
                 </table>
-                <script>
-                    $(document).on('change', '[id^="customSwitch"]', function (e) {
-                        if($(this).prop('checked')){
-                            if(!confirm('소리치료를 ON 하시겠습니까?')){
-                                e.preventDefault();
-                                $(this).prop('checked', false);
-                            }
-                        }else{
-                            if (!confirm('소리치료를 OFF 하시겠습니까?')) {
-                                e.preventDefault();
-                                $(this).prop('checked', true);
-                            }
-                        }
-                    })
-                </script>
                 <div class="row mt-3">
                     <div class="col">
                         <div class="d-flex align-items-center">
