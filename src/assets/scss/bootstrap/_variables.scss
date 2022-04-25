@@ -371,7 +371,7 @@ $table-active-bg:             $table-hover-bg !default;
 $table-border-width:          $border-width !default;
 $table-border-color:          $border-color !default;
 
-$table-head-bg:               #f8f8f8 !default;
+$table-head-bg:               #f3f3f3 !default;
 $table-head-color:            $gray-700 !default;
 $table-th-font-weight:        null !default;
 
@@ -855,7 +855,7 @@ $jumbotron-bg:                      $gray-200 !default;
 $card-spacer-y:                     1rem !default;
 $card-spacer-x:                     1.25rem !default;
 $card-border-width:                 $border-width !default;
-$card-border-radius:                .25rem !default;
+$card-border-radius:                0 !default;
 $card-border-color:                 rgba($black, .125) !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-bg:                       rgba($black, .04) !default;
