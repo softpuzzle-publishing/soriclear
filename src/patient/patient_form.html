@@ -21,9 +21,14 @@
                 <h2 class="title d-none">환자관리</h2>
                 <h2 class="title-location"><a href="javascript:history.back();"><i class="fas fa-chevron-left mr-3"></i></a>신규 등록</h2>
                 <div class="pt-3 border-top">
-                    <div class="table-title">개인 정보</div>
-                    <table class="table">
+                    <div class="d-flex justify-content-between">
+                        <div class="table-title">개인 정보</div>
+                        <p class="text-danger">* 필수항목입니다.</p>
+                    </div>
+                    <table class="table table-fixed">
                         <colgroup>
+                            <col style="width: 13%;">
+                            <col>
                             <col style="width: 13%;">
                             <col>
                         </colgroup>
@@ -31,10 +36,12 @@
                             <tr>
                                 <th>병원 명</th>
                                 <td>로완 병원</td>
+                                <th>담당과</th>
+                                <td>이비인후과</td>
                             </tr>
                             <tr>
                                 <th>아이디 *</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="text" class="form-control w-auto" placeholder="입력하세요">
@@ -50,7 +57,7 @@
                             </tr>
                             <tr>
                                 <th>비밀번호 *</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="password" class="form-control w-auto" placeholder="입력하세요">
@@ -61,12 +68,12 @@
                                         </div>
                                     </div>
                                     <!-- 수정시 보임 -->
-                                    <button type="button" class="btn btn-outline-dark btn-sm" data-target="#modal-change-password" data-toggle="modal">비밀번호수정</button>
+                                    <button type="button" class="btn btn-outline-dark" data-target="#modal-change-password" data-toggle="modal">비밀번호수정</button>
                                 </td>
                             </tr>
                             <tr>
                                 <th>비밀번호 확인 *</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="password" class="form-control w-auto" placeholder="입력하세요">
@@ -80,7 +87,7 @@
                             </tr>
                             <tr>
                                 <th>환자명 *</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="text" class="form-control w-auto" placeholder="입력하세요">
@@ -90,7 +97,7 @@
                             </tr>
                             <tr>
                                 <th>성별 *</th>
-                                <td>
+                                <td colspan="3">
                                     <input type="radio" name="AuthorUse" id="genderM">
                                     <label for="genderM">남</label>
                                     <input type="radio" name="AuthorUse" id="genderW">
@@ -98,8 +105,30 @@
                                 </td>
                             </tr>
                             <tr>
+                                <th>주파수별 청력 역치 *</th>
+                                <td colspan="3">
+                                    <input type="text" class="form-control w-auto">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이명 주파수 *</th>
+                                <td colspan="3">
+                                    <select name="" id="" class="custom-select w-auto">
+                                        <option value="">0.25 kHz</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이명의 크기 *</th>
+                                <td colspan="3">
+                                    <input type="text" class="form-control w-auto">
+                                </td>
+                            </tr>
+                            <tr>
                                 <th>생년월일 *</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="text" class="form-control w-auto" placeholder="1960-01-01">
@@ -109,7 +138,7 @@
                             </tr>
                             <tr>
                                 <th>연락처 *</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="text" class="form-control w-auto" placeholder="010-1234-5678">
@@ -119,7 +148,7 @@
                             </tr>
                             <tr>
                                 <th>이메일</th>
-                                <td>
+                                <td colspan="3">
                                     <div class="row row-10 align-items-center">
                                         <div class="col-auto">
                                             <input type="text" class="form-control w-auto">
@@ -131,7 +160,7 @@
                                             <input type="text" class="form-control w-auto">
                                         </div>
                                         <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
+                                            <select name="" id="" class="custom-select w-auto">
                                                 <option value="">직접입력</option>
                                             </select>
                                         </div>
@@ -140,7 +169,7 @@
                             </tr>
                             <tr>
                                 <th>기타 메모</th>
-                                <td>
+                                <td colspan="3">
                                     <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                                 </td>
                             </tr>
@@ -148,6 +177,9 @@
                     </table>
                     <div class="row justify-content-between align-items-center mt-3">
                         <div class="col-auto">
+                            <select name="" id="" class="custom-select">
+                                <option value="">0.25 kHz</option>
+                            </select>
                         </div>
                         <div class="col-auto">
                             <div class="d-flex">

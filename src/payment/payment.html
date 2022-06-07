@@ -23,7 +23,11 @@
                     <div class="row align-items-stretch">
                         <div class="col">
                             <div class="d-flex align-items-center">
-                                <label for="">구분</label>
+                                <label for="">병원</label>
+                                <select name="" id="" class="custom-select d-inline-block w-auto">
+                                    <option value="">전체</option>
+                                </select>
+                                <label for="">정산</label>
                                 <select name="" id="" class="custom-select d-inline-block w-auto">
                                     <option value="">전체</option>
                                 </select>
@@ -87,15 +91,21 @@
                     </colgroup>
                     <thead class="thead-dark">
                         <tr>
-                            <th>NO</th>
-                            <th>결제날짜</th>
-                            <th>아이디</th>
-                            <th>환자명</th>
-                            <th>연락처</th>
-                            <th>결제 학습 수</th>
-                            <th>결제금액</th>
-                            <th>결제방법</th>
-                            <th>병원명</th>
+                            <th rowspan="2">NO</th>
+                            <th rowspan="2">결제날짜</th>
+                            <th rowspan="2">아이디</th>
+                            <th rowspan="2">환자명</th>
+                            <th rowspan="2">연락처</th>
+                            <th rowspan="2">결제 학습 수</th>
+                            <th rowspan="2">결제금액</th>
+                            <th rowspan="2">결제방법</th>
+                            <th rowspan="2">병원명</th>
+                            <th rowspan="2">담당과</th>
+                            <th colspan="2">시스템 수수료</th>
+                        </tr>
+                        <tr>
+                            <th>수수료</th>
+                            <th>정산 상태</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -110,8 +120,25 @@
                             <td>2,000,000</td>
                             <td>병원수납</td>
                             <td>00병원</td>
+                            <td>정신과</td>
+                            <td>1,510,000</td>
+                            <td><span class="text-danger">정산예정</span></td>
                         </tr>
                         }
+                        <tr>
+                            <td>`+i+`</td>
+                            <td>2022.12.01</td>
+                            <td>Abc2***</td>
+                            <td><a href="payment_detail.html" class="text-underline">홍길동</a></td>
+                            <td>01021541215</td>
+                            <td>100</td>
+                            <td>2,000,000</td>
+                            <td>병원수납</td>
+                            <td>00병원</td>
+                            <td>정신과</td>
+                            <td>1,510,000</td>
+                            <td><span>정산예정</span></td>
+                        </tr>
                     </tbody>
                 </table>
                 <div class="row mt-3">

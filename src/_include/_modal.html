@@ -338,7 +338,7 @@
                     </button>
                 </div>
                 <div class="modal-body p-5 text-center">
-                    작성중인 내용을 취소하고<br> 이전 화면으로 돌아가시겠습니까? 
+                    작성중인 내용을 취소하고<br> 이전 화면으로 돌아가시겠습니까?
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-outline-dark" data-dismiss="modal">아니오</button>
@@ -421,15 +421,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @@for(var i = 1; i < 5; i++){
-                                    <tr>
+                                    @@for(var i = 1; i < 5; i++){ <tr>
                                         <td><input type="radio"></td>
                                         <td>`+i+`</td>
                                         <td class="text-left">로완병원_공통 커리큘럼</td>
                                         <td>20</td>
                                         <td>2022.12.31 15:25</td>
-                                    </tr>
-                                    }
+                                        </tr>
+                                        }
                                 </tbody>
                             </table>
                             <table class="table table-bordered table-center table-hover">
@@ -442,14 +441,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @@for(var i = 1; i < 6; i++){
-                                    <tr>
+                                    @@for(var i = 1; i < 6; i++){ <tr>
                                         <td><input type="checkbox"></td>
                                         <td>`+i+`차</td>
                                         <td>유료</td>
                                         <td class="text-left">이명은 얼마나 흔할까요? 프로그램 메뉴 가이드</td>
-                                    </tr>
-                                    }
+                                        </tr>
+                                        }
                                 </tbody>
                             </table>
                         </div>
@@ -634,7 +632,7 @@
                             </tr>
                             <tr>
                                 <th>작성시간</th>
-                                <td>2022-05-05  23:34</td>
+                                <td>2022-05-05 23:34</td>
                             </tr>
                         </tbody>
                     </table>
@@ -696,10 +694,18 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="text-center">소속*</th>
+                                <th class="text-center">병원*</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="" selected>병원을 선택하세요</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">담당과*</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="" selected>담당과를 선택하세요</option>
                                     </select>
                                 </td>
                             </tr>
@@ -1011,7 +1017,7 @@
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-outline-dark" data-dismiss="modal">취소</button>
-                        <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-dark">저장</button>
                 </div>
             </div>
         </div>
@@ -1148,8 +1154,7 @@
                             <tr>
                                 <td colspan="4">작성된 내용이 없습니다.</td>
                             </tr>
-                            @@for (var i = 1; i < 10; i++){
-                            <tr>
+                            @@for (var i = 1; i < 10; i++){ <tr>
                                 <td>`+i+`</td>
                                 <td>
                                     <textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
@@ -1161,8 +1166,8 @@
                                 <td>
                                     <button type="button" class="btn btn-outline-dark btn-sm">삭제</button>
                                 </td>
-                            </tr>
-                            }
+                                </tr>
+                                }
                         </tbody>
                     </table>
                 </div>
@@ -1219,6 +1224,179 @@
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-outline-dark" data-dismiss="modal">아니오</button>
                     <button type="button" class="btn btn-dark">예</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 과제관리 > 동영상 강의 관리 > 사용자학습현황 _통계(평가결과보기) -->
+    <div class="modal" tabindex="-1" id="modal-video-statics-result" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">이명 증상 설문지</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                
+                    <div class="position-relative">
+                        <nav class="tab-custom mb-3">
+                            <ul class="nav nav-tabs"  id="nav-tab" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thi-content" role="tab">THI</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#vas-content" role="tab">VAS</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="position-absolute" style="top:0; right:0;">
+                            <select name="" id="" class="custom-select">
+                                <option value="">사전평가(최초) : 2022.12.01 15:32</option>
+                                <option value="">중간평가(10차) : 2022.12.01 15:32</option>
+                                <option value="">중간평가(20차) : 2022.12.01 15:32</option>
+                                <option value="">최종평가(30차) : 2022.12.01 15:32</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="thi-content" role="tabpanel">
+                            <table class="table table-bordered table-center table-hover table-fixed">
+                                <colgroup>
+                                    <col style="width:8%">
+                                    <col>
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>질문</th>
+                                        <th>그렇다<br>(4점)</th>
+                                        <th>가끔그렇다<br>(2점)</th>
+                                        <th>아니다<br>(0점)</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @@ for(var i = 1; i < 26; i++){
+                                    <tr>
+                                        <td>`+i+`</td>
+                                        <td class="text-left">이명의 크기로 인해 다른 사람이 말하는 것을 듣기가 어렵습니까? 
+                                        </td>
+                                        <td>&#9711;</td>
+                                        <td>&#9711;</td>
+                                        <td>&#9711;</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr class="bg-lightgray">
+                                        <td colspan="2"><strong>합산점수</strong></td>
+                                        <td colspan="3" class="text-right">  <b>75</b> 점</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="vas-content" role="tabpanel">
+                            <table class="table table-bordered table-center table-hover table-fixed">
+                                <colgroup>
+                                    <col style="width: 8%;">
+                                    <col>
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">번호</th>
+                                        <th rowspan="2">질문</th>
+                                        <th colspan="5">척도 체크</th>
+                                    </tr>
+                                    <tr>
+                                        <th>아주<br>맞다</th>
+                                        <th>일부<br>맞다</th>
+                                        <th>모르겠다</th>
+                                        <th>일부<br>틀리다</th>
+                                        <th>전혀<br>틀리다</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="text-left" colspan="6">
+                                            <p>나는 이명과 관련해 다음과 같은 걱정(생각)을 가지고 있다. </p>
+                                            <p>그런 생각이 든다면, 그 생각이 얼만큼 맞다고 믿는지 선택 하세요. (총 10개의 하위 문항이 제공 됩니다.) </p>
+                                        </td>
+                                    </tr>
+                                    @@ for(var i = 2; i < 26; i++){
+                                    <tr>
+                                        <td>1-`+i+`</td>
+                                        <td class="text-left">이명의 크기로 인해 다른 사람이 말하는 것을 듣기가 어렵습니까? 
+                                        </td>
+                                        <td>&#9711;</td>
+                                        <td>&#9711;</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    }
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td class="text-left">
+                                            기타 :  <span class="text-primary">사용자 입력 : 채매가 올 것 같다 </span>
+                                        </td>
+                                        <td>&#9711;</td>
+                                        <td>&#9711;</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="text-left">
+                                            평소 혹은 이명이 들릴 때 이명과 관련하여 부정적 생각 혹은 걱정을 얼마나 하시나요? 
+                                        </td>
+                                        <td colspan="5">5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="text-left">
+                                            평소 이명으로 인한 짜증/불안/우울 등의 기분으로 인하여 얼마나 힘들었나요? 
+
+                                        </td>
+                                        <td colspan="5">7</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal : 로그인 > 아이디 체크-->
+    <div class="modal" tabindex="-1" id="modal-calculate-complete" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-5 text-center">
+                    정산 상태를 변경 하시겠습니까? 
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
                 </div>
             </div>
         </div>
